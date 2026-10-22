@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible v7 integration over the unchanged version-6 application.
+"""Reproducible v8 integration over the unchanged version-6 application.
 Usage: python build.py --esbuild /absolute/path/to/esbuild
 """
 from pathlib import Path
@@ -13,12 +13,12 @@ def replace(old,new,count=1):
  if base.count(old)!=count:raise RuntimeError(f'Integration anchor changed: {old[:95]} (found {base.count(old)}, expected {count})')
  base=base.replace(old,new)
 
-modules=['domain.js','schemas.js','components.jsx','module.jsx','support.jsx','rtp.jsx','bcms.jsx']
+modules=['jalali.js','minimal-domain.js','minimal-primitives.jsx','date-ui.jsx','minimal-ui.jsx','minimal-rtp.jsx','minimal-bcms.jsx','minimal-radar.jsx']
 combined='\n'.join((source/f).read_text() for f in modules)
 compiled=subprocess.run([args.esbuild,'--loader=jsx','--jsx-factory=DH','--jsx-fragment=Ia.Fragment','--target=es2020','--charset=utf8'],input=combined,text=True,capture_output=True,check=True).stdout
-replace('content="6"','content="7"')
-replace("'didban-report-meta'];","'didban-report-meta','didban-rtp-independent-v1','didban-bcms-independent-v1'];")
-replace('function js(){',compiled+'\nfunction js(){const [v7tab,setV7tab]=Ia.useState({rtp:"dashboard",bcms:"dashboard"});')
+replace('content="6"','content="8"')
+replace("'didban-report-meta'];","'didban-report-meta','didban-rtp-independent-v2','didban-bcms-independent-v2'];")
+replace('function js(){','/*V8_MODULES*/\nfunction js(){const [v7tab,setV7tab]=Ia.useState({rtp:"dashboard",bcms:"dashboard"});')
 old='let Jd=[["dashboard","نمای کلی",to],["clauses","الزامات استاندارد",uo],["controls","کنترل‌های Annex A",vt],["improvements","اقدامات بهبود",Qt],["method","روش ارزیابی",fo],["risk","مدیریت ریسک",vt],["support","پشتیبانی سایت",()=>DH(DSIcon,{name:"support",size:19})]];'
 nav=[('dashboard','داشبورد مدیریتی','dashboard'),('clauses','الزامات استاندارد','list'),('controls','کنترل‌های Annex A','shield'),('improvements','اقدامات اصلاحی','correct'),('rtp','Risk Treatment Plan','target'),('method','روش ارزیابی','method'),('risk','مدیریت ریسک','risk'),('bcms','تداوم کسب‌وکار (BCMS)','activity'),('support','پشتیبانی سایت','support')]
 import json
@@ -31,14 +31,14 @@ replace('a==="risk"||a==="support"?"none":undefined','["risk","support","rtp","b
 replace('a==="support"?(0,i.jsx)(DSSupport,','(a==="rtp"||a==="bcms")?DH(V7Module,{key:a,type:a,tab:v7tab[a],onTab:t=>setV7tab(prev=>({...prev,[a]:t}))}):a==="support"?(0,i.jsx)(DSSupport,')
 start=base.index('(0,i.jsxs)("section",{className:"panel concept-panel"')
 end=base.index(',(0,i.jsxs)("div",{className:"bottomgrid"',start)
-base=base[:start]+'DH(V7ConceptRadar,{data:G,onGroup:gL})'+base[end:]
+base=base[:start]+'DH(V7ConceptRadar,{data:G,onGroup:gL,onItem:Pe,onClauses:()=>e("clauses")})'+base[end:]
 replace("const dsNav=[['dashboard','نمای کلی'],['clauses','الزامات استاندارد'],['controls','کنترل‌های Annex A'],['improvements','اقدامات بهبود'],['method','روش ارزیابی'],['risk','مدیریت ریسک'],['support','پشتیبانی سایت']];",'const dsNav='+json.dumps([[k,title] for k,title,icon in nav],ensure_ascii=False)+';')
 replace("onClick:()=>{setTab(k);setEdit(null)}},v)","onClick:()=>{setTab(k);setEdit(null)}},DH(V7Icon,{name:({overview:'dashboard',context:'settings',assets:'resource',risks:'risk',method:'method'})[k]}),v)")
 # Extend the existing all-project backup and atomic import. Older v6 backups start empty new modules.
 replace("reportMeta:DSReadReportMeta(),assessments:t,projects:q,risk}","reportMeta:DSReadReportMeta(),assessments:t,projects:q,risk,rtp:V7Read('rtp'),bcms:V7Read('bcms')}")
 replace("format:'didban-security-project-v4'","format:'didban-security-project-v5'")
 replace('setDSImport({project,assessments:assess,projects:projects||[],risk,meta})',"setDSImport({project,assessments:assess,projects:projects||[],risk,meta,rtp:parsed.rtp===undefined?V7D.defaults('rtp'):V7D.validState(parsed.rtp,'rtp'),bcms:parsed.bcms===undefined?V7D.defaults('bcms'):V7D.validState(parsed.bcms,'bcms')})")
-replace("'didban-report-meta':JSON.stringify({...payload.meta,organization})}","'didban-report-meta':JSON.stringify({...payload.meta,organization}),'didban-rtp-independent-v1':JSON.stringify(payload.rtp||V7D.defaults('rtp')),'didban-bcms-independent-v1':JSON.stringify(payload.bcms||V7D.defaults('bcms'))}")
+replace("'didban-report-meta':JSON.stringify({...payload.meta,organization})}","'didban-report-meta':JSON.stringify({...payload.meta,organization}),'didban-rtp-independent-v2':JSON.stringify(payload.rtp||V7D.defaults('rtp')),'didban-bcms-independent-v2':JSON.stringify(payload.bcms||V7D.defaults('bcms'))}")
 replace('async function dsExcel(assessments,projects,risk,meta){','async function dsExcel(assessments,projects,risk,meta,customTables){')
 replace('tables=dsReportTables(assessments,projects,risk,meta),ns=', 'tables=customTables||dsReportTables(assessments,projects,risk,meta),ns=')
 replace("ddDownload('Didban_Amniat_Audit.xlsx'","ddDownload(customTables?'Didban_Module_Report.xlsx':'Didban_Amniat_Audit.xlsx'")
@@ -63,6 +63,22 @@ base=base[:start]+"[theme,setTheme]=Ia.useState(()=>window.V7ThemePreference||'l
 old="action(dark?'sun':'moon',dark?'حالت روشن':'حالت تاریک',()=>setDark(!dark),dark)"
 new="DH('select',{'aria-label':'پوسته سایت',className:'v7-theme-select',value:theme,onChange:e=>setTheme(e.target.value)},DH('option',{value:'light'},'☀ روشن'),DH('option',{value:'dark'},'☾ تاریک'),DH('option',{value:'system'},'سیستم'))"
 replace(old,new)
+# Simplify only the native optional audit fields; retain the audit workflow.
+a=base.index('const DSExtraFields=');b=base.index('const DSOrgGroups=',a)
+base=base[:a]+"""const DSExtraFields={reviewer:'نام ممیز',correctiveAction:'اقدام اصلاحی (در صورت وجود)',previousCompliance:'وضعیت انطباق در ممیزی قبلی'};
+function DSExtractAuditExtra(a){const out={};for(const key of Object.keys(DSExtraFields)){if(a[key]!==undefined&&typeof a[key]!=='string')throw Error('اطلاعات تکمیلی نامعتبر است.');out[key]=a[key]||'';}return out;}
+function DSAuditExtra({value,onChange}){return DH('details',{className:'ds-audit-extra'},DH('summary',{},'اطلاعات تکمیلی (اختیاری)'),...Object.entries(DSExtraFields).map(([key,label])=>DH('label',{key},label,key==='previousCompliance'?DH('select',{'aria-label':label,value:value[key]??'',onChange:e=>onChange({...value,[key]:e.target.value})},DH('option',{value:''},'ثبت نشده'),...dcNames.map((name,i)=>DH('option',{key:i,value:String(i)},name))):DH(key==='reviewer'?'input':'textarea',{'aria-label':label,value:value[key]||'',onChange:e=>onChange({...value,[key]:e.target.value})}))));}
+"""+base[b:]
+replace("const dsXml=s=>String(s??'')","const dsXml=s=>V8Print(s)")
+# Transform legacy React date inputs and visible date children at build time only.
+def transform_script(match):
+ script=match.group(1)
+ if '/*V8_MODULES*/' not in script:return match.group(0)
+ result=subprocess.run(['node',str(source/'transform-legacy.cjs')],input=script,text=True,capture_output=True,check=True)
+ print(result.stderr.strip())
+ return '<script>'+result.stdout.replace('/*V8_MODULES*/',compiled.replace('</script','<\\/script'))+'</script>'
+base=re.sub(r'<script>([\s\S]*?)</script>',transform_script,base)
+
 # Harmonize legacy CSS by declaration, retaining selectors, responsive and print rules.
 def color_token(raw,property):
  h=raw.lstrip('#');h=''.join(c*2 for c in h) if len(h) in (3,4) else h
@@ -99,6 +115,6 @@ bootstrap="""<script>(function(){let pref='light';try{pref=window.localStorage.g
 base=base.replace('</head>','<style>'+fonts+(source/'theme.css').read_text()+'</style>'+bootstrap+'</head>')
 # Preserve historical filename aliases; clean HTMLs contain no organization data.
 for filename in ['Didban_Amniat_Offline.html','Didban_ISMS_Offline.html']:(ROOT/filename).write_text(base)
-fresh=base.replace('<meta name="didban-version" content="7">','<meta name="didban-version" content="7"><meta name="didban-store-id" content="fresh-v6">')
+fresh=base.replace('<meta name="didban-version" content="8">','<meta name="didban-version" content="8"><meta name="didban-store-id" content="fresh-v8">')
 (ROOT/'Didban_Amniat_Offline_Fresh.html').write_text(fresh)
-print('Built offline v7:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')
+print('Built offline v8:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')

@@ -1,1 +1,16 @@
-{"name":"didban-amniat-offline","version":"7.0.0","private":true,"scripts":{"build":"python3 build.py","test":"node tests/domain.test.cjs"},"devDependencies":{"esbuild":"0.28.2"}}
+{
+  "name": "didban-amniat-offline",
+  "version": "8.0.0",
+  "private": true,
+  "scripts": {
+    "build": "python3 build.py",
+    "test": "node tests/minimal.test.cjs"
+  },
+  "devDependencies": {
+    "@babel/generator": "^8.0.6",
+    "@babel/parser": "^8.0.7",
+    "@babel/traverse": "^8.0.7",
+    "@babel/types": "^8.0.6",
+    "esbuild": "0.28.2"
+  }
+}

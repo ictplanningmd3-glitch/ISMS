@@ -1,0 +1,2 @@
+# Preserve the original v6 template source byte-for-byte.
+src/base-v6.html -whitespace

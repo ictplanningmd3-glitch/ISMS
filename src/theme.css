@@ -29,6 +29,28 @@
  --radar-sweep:#7DD3FC; --radar-major:#F87171; --radar-minor:#FB923C;
  --radar-improvement:#FBBF24; --radar-observation:#60A5FA;
  --radar-conformity:#4ADE80; --radar-unknown:#94A3B8;
+ /* Implementation is separate from audit compliance and BCMS readiness. */
+ --impl-none:#DC2626; --impl-planned:#FACC15; --impl-partial:#14B8A6;
+ --impl-implemented:#16A34A; --impl-effective:#C4B5FD; --impl-unknown:#CBD5E1;
+ --impl-none-fg:#B91C1C; --impl-planned-fg:#854D0E; --impl-partial-fg:#0F766E;
+ --impl-implemented-fg:#166534; --impl-effective-fg:#6D28D9; --impl-unknown-fg:#475569;
+ --impl-none-bg:color-mix(in srgb,var(--impl-none) 10%,var(--surface));
+ --impl-planned-bg:color-mix(in srgb,var(--impl-planned) 10%,var(--surface));
+ --impl-partial-bg:color-mix(in srgb,var(--impl-partial) 10%,var(--surface));
+ --impl-implemented-bg:color-mix(in srgb,var(--impl-implemented) 10%,var(--surface));
+ --impl-effective-bg:color-mix(in srgb,var(--impl-effective) 10%,var(--surface));
+ --impl-unknown-bg:color-mix(in srgb,var(--impl-unknown) 10%,var(--surface));
+ --impl-none-border:color-mix(in srgb,var(--impl-none) 48%,var(--border));
+ --impl-planned-border:color-mix(in srgb,var(--impl-planned) 60%,var(--border));
+ --impl-partial-border:color-mix(in srgb,var(--impl-partial) 48%,var(--border));
+ --impl-implemented-border:color-mix(in srgb,var(--impl-implemented) 48%,var(--border));
+ --impl-effective-border:color-mix(in srgb,var(--impl-effective) 60%,var(--border));
+ --impl-unknown-border:color-mix(in srgb,var(--impl-unknown) 65%,var(--border));
+ --impl-outline:#64748B;
+ --hero-bg:#0B2448; --hero-end:#124B7E; --hero-border:#2C70A8;
+ --hero-text:#F8FBFF; --hero-secondary:#D6E8FF; --hero-muted:#BDD8F2;
+ --hero-accent:#78F2D0; --hero-badge-bg:#0C4868; --hero-badge-edge:#3F96B2;
+
  --db-bg:var(--bg); --db-panel:var(--surface); --db-ink:var(--text-primary);
  --db-muted:var(--text-secondary); --db-edge:var(--border); --db-soft:var(--surface-alt); --db-accent:var(--primary);
 }
@@ -50,6 +72,14 @@ html[data-theme=dark] {
  --chart-1:#3B82F6; --chart-2:#14B8A6; --chart-3:#A78BFA; --chart-4:#E879F9;
  --chart-5:#F59E0B; --chart-6:#94A3B8; --chart-7:#FB923C; --chart-8:#CBD5E1;
  --chart-axis:#CBD5E1; --chart-grid:#3A4E69; --radar-fill:#60A5FA24;
+ --impl-none:#F87171; --impl-planned:#FACC15; --impl-partial:#2DD4BF;
+ --impl-implemented:#4ADE80; --impl-effective:#C4B5FD; --impl-unknown:#CBD5E1;
+ --impl-none-fg:#F87171; --impl-planned-fg:#FACC15; --impl-partial-fg:#2DD4BF;
+ --impl-implemented-fg:#4ADE80; --impl-effective-fg:#C4B5FD; --impl-unknown-fg:#CBD5E1;
+ --impl-outline:#94A3B8;
+ --hero-bg:#091E3B; --hero-end:#103D66; --hero-border:#2C6291;
+ --hero-badge-bg:#103D57; --hero-badge-edge:#3D819D;
+
 }
 html,body,body button,body input,body textarea,body select,body table,body svg text,body .english-title,body .code,body bdi{font-family:'Vazirmatn','Inter',Tahoma,sans-serif!important;font-synthesis:none}
 html body{font-size:14px;line-height:1.75;background:var(--bg);color:var(--text-primary)}html body *{font-weight:400!important}html body :is(b,strong,h1,h2,h3,h4,th),html body .primary{font-weight:600!important}html body :is(h1,.heading h1){font-size:24px;font-weight:700!important;letter-spacing:0}html body h2,html body .paneltitle h2{font-size:18px}html body h3{font-size:16px;margin:18px 0 12px}html body h4{font-size:15px}html body small{font-size:12px;color:var(--text-secondary)}html body .heading p,html body .paneltitle p{font-size:13px;color:var(--text-secondary)}html body button,html body input,html body select,html body textarea,html body table,html body form label{font-size:14px}html body svg text{font-weight:500!important}html body [lang=en],html body bdi,html body [dir=ltr]{font-family:'Inter','Vazirmatn',sans-serif!important;font-variant-numeric:tabular-nums;unicode-bidi:isolate}
@@ -109,3 +139,31 @@ body .v8-calendar button.selected:hover{background:var(--primary);color:var(--pr
 
 /* Keep creation-dialog date inputs aligned with the other project fields. */
 .v7-modal .v8-date>input:not([type=hidden]){width:100%;min-width:0}
+
+/* V10 implementation labels: all six states retain their own hue in either theme. */
+[data-implementation="0"],[data-implementation="none"]{--implementation-fill:var(--impl-none);--implementation-fg:var(--impl-none-fg);--implementation-bg:var(--impl-none-bg);--implementation-border:var(--impl-none-border)}
+[data-implementation="1"],[data-implementation="planned"]{--implementation-fill:var(--impl-planned);--implementation-fg:var(--impl-planned-fg);--implementation-bg:var(--impl-planned-bg);--implementation-border:var(--impl-planned-border)}
+[data-implementation="2"],[data-implementation="partial"]{--implementation-fill:var(--impl-partial);--implementation-fg:var(--impl-partial-fg);--implementation-bg:var(--impl-partial-bg);--implementation-border:var(--impl-partial-border)}
+[data-implementation="3"],[data-implementation="implemented"]{--implementation-fill:var(--impl-implemented);--implementation-fg:var(--impl-implemented-fg);--implementation-bg:var(--impl-implemented-bg);--implementation-border:var(--impl-implemented-border)}
+[data-implementation="4"],[data-implementation="effective"]{--implementation-fill:var(--impl-effective);--implementation-fg:var(--impl-effective-fg);--implementation-bg:var(--impl-effective-bg);--implementation-border:var(--impl-effective-border)}
+[data-implementation="unknown"]{--implementation-fill:var(--impl-unknown);--implementation-fg:var(--impl-unknown-fg);--implementation-bg:var(--impl-unknown-bg);--implementation-border:var(--impl-unknown-border)}
+body .badge[data-implementation]{color:var(--implementation-fg);background:var(--implementation-bg);border-color:var(--implementation-border)}
+
+/* A stronger first impression with the original shield-and-eye logo retained. */
+body .ds-audit-banner{background:radial-gradient(ellipse at 12% 15%,#168F9750,transparent 54%),linear-gradient(116deg,var(--hero-bg),var(--hero-end));border:1px solid var(--hero-border);border-radius:16px;min-height:260px;color:var(--hero-text);box-shadow:0 10px 26px #0B244812;padding:34px 35px;isolation:isolate}
+body .ds-audit-banner::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#8ED8FF08 1px,transparent 1px),linear-gradient(#8ED8FF08 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:0;mask-image:linear-gradient(90deg,#000,transparent 72%)}
+body .ds-audit-banner::after{content:"";position:absolute;bottom:0;right:35px;left:35px;height:3px;background:linear-gradient(90deg,transparent,#64D9E4,var(--hero-accent));opacity:.75;pointer-events:none}
+body .ds-banner-copy{max-width:65%;text-shadow:none}
+body .ds-banner-copy>span{display:inline-flex;align-items:center;padding:5px 12px;background:var(--hero-badge-bg);border:1px solid var(--hero-badge-edge);border-radius:6px;color:#D7FFF4;font-size:12px;line-height:1.7;letter-spacing:0}
+body .ds-audit-banner h1,body .ds-audit-banner h2{color:var(--hero-text);font-size:27px;line-height:1.8;margin:12px 0 8px;font-weight:700!important}
+body .ds-banner-copy p{color:var(--hero-secondary);font-size:15px;line-height:1.9;margin-top:8px}
+body .ds-banner-copy small,body .ds-audit-banner .v8-en{color:var(--hero-muted);font-size:12px;line-height:1.8}
+body .ds-banner-art{left:-18px;width:47%;opacity:1;filter:drop-shadow(0 0 16px #41C6E325)}
+body .ds-banner-art svg{opacity:1;min-height:240px}
+body .ds-banner-pause{background:#09294B;color:#D8F1FF;border:1px solid #6197BC;bottom:14px;left:14px;border-radius:6px;min-height:30px;padding:3px 10px}
+body .ds-banner-pause:hover{background:#174C78;color:#FFFFFF;border-color:#A5D9FA}
+body .ds-banner-pause:focus-visible{outline-color:#B8E7FF}
+@media(max-width:850px){body .ds-audit-banner{padding:26px;min-height:250px}body .ds-audit-banner h1,body .ds-audit-banner h2{font-size:24px}body .ds-banner-copy{max-width:68%}body .ds-banner-art{width:49%;left:-35px;opacity:.95}}
+@media(max-width:520px){body .ds-audit-banner{padding:22px 20px 54px;min-height:275px}body .ds-banner-copy{max-width:100%}body .ds-audit-banner h1,body .ds-audit-banner h2{font-size:21px;max-width:100%;line-height:1.85}body .ds-banner-copy>span{font-size:11px}body .ds-banner-copy p{font-size:14px}body .ds-banner-copy small{display:block;max-width:88%;font-size:11px}body .ds-banner-art{width:100%;left:-42%;opacity:.12;z-index:0}body .ds-banner-copy{z-index:2}body .ds-audit-banner::after{right:20px;left:20px}}
+@media(prefers-reduced-motion:reduce){body .ds-audit-banner .ds-orbit,body .ds-audit-banner .ds-signal,body .ds-audit-banner .ds-scan{animation:none!important}}
+@media print{body .ds-audit-banner{background:#FFFFFF!important;color:#0F172A!important;box-shadow:none;border-color:#CBD5E1}body .ds-audit-banner::before,body .ds-audit-banner::after,body .ds-banner-art,body .ds-banner-pause{display:none!important}body .ds-banner-copy{max-width:100%}body .ds-banner-copy>span{color:#0F172A;background:#F1F5F9;border-color:#CBD5E1}body .ds-audit-banner h1,body .ds-audit-banner h2{color:#0F172A}body .ds-banner-copy p,body .ds-banner-copy small,body .ds-audit-banner .v8-en{color:#334155}}

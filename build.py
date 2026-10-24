@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible v9 integration over the unchanged version-6 application.
+"""Reproducible v10 integration over the unchanged version-6 application.
 Usage: python build.py --esbuild /absolute/path/to/esbuild
 """
 from pathlib import Path
@@ -13,10 +13,10 @@ def replace(old,new,count=1):
  if base.count(old)!=count:raise RuntimeError(f'Integration anchor changed: {old[:95]} (found {base.count(old)}, expected {count})')
  base=base.replace(old,new)
 
-modules=['jalali.js','minimal-domain.js','compliance.js','minimal-primitives.jsx','date-ui.jsx','minimal-ui.jsx','minimal-rtp.jsx','minimal-bcms.jsx','minimal-radar.jsx']
+modules=['jalali.js','minimal-domain.js','bcms-recovery.js','compliance.js','minimal-primitives.jsx','date-ui.jsx','minimal-ui.jsx','dashboard-v10.jsx','bcms-recovery.jsx','minimal-rtp.jsx','minimal-bcms.jsx','minimal-radar.jsx']
 combined='\n'.join((source/f).read_text() for f in modules)
 compiled=subprocess.run([args.esbuild,'--loader=jsx','--jsx-factory=DH','--jsx-fragment=Ia.Fragment','--target=es2020','--charset=utf8'],input=combined,text=True,capture_output=True,check=True).stdout
-replace('content="6"','content="9"')
+replace('content="6"','content="10"')
 replace("'didban-report-meta'];","'didban-report-meta','didban-rtp-independent-v2','didban-bcms-independent-v2'];")
 replace('function js(){','/*V8_MODULES*/\nfunction js(){const [v7tab,setV7tab]=Ia.useState({rtp:"dashboard",bcms:"dashboard"});')
 old='let Jd=[["dashboard","نمای کلی",to],["clauses","الزامات استاندارد",uo],["controls","کنترل‌های Annex A",vt],["improvements","اقدامات بهبود",Qt],["method","روش ارزیابی",fo],["risk","مدیریت ریسک",vt],["support","پشتیبانی سایت",()=>DH(DSIcon,{name:"support",size:19})]];'
@@ -43,8 +43,13 @@ replace('async function dsExcel(assessments,projects,risk,meta){','async functio
 replace('tables=dsReportTables(assessments,projects,risk,meta),ns=', 'tables=customTables||dsReportTables(assessments,projects,risk,meta),ns=')
 replace("ddDownload('Didban_Amniat_Audit.xlsx'","ddDownload(customTables?'Didban_Module_Report.xlsx':'Didban_Amniat_Audit.xlsx'")
 # Native inline theme variables keep existing charts live when the theme changes.
-replace('Jt=["#ef7274","#e9b853","#52b5db","#22b6a8","#36876f"]','Jt=["var(--danger)","var(--warning)","var(--info)","var(--accent)","var(--success)"]')
-base=re.sub(r'(Jt\[[^\]]+\])\+"(?:12|18|20|22|2a)"',r'"color-mix(in srgb,"+\1+" 9%,var(--surface))"',base)
+replace('Jt=["#ef7274","#e9b853","#52b5db","#22b6a8","#36876f"]','Jt=["var(--impl-none)","var(--impl-planned)","var(--impl-partial)","var(--impl-implemented)","var(--impl-effective)"],JtText=["var(--impl-none-fg)","var(--impl-planned-fg)","var(--impl-partial-fg)","var(--impl-implemented-fg)","var(--impl-effective-fg)"]')
+base=re.sub(r'(Jt\[[^\]]+\])\+"(?:12|15|18|20|22|2a)"',r'"color-mix(in srgb,"+\1+" 9%,var(--surface))"',base)
+# Implementation status colors stay separate from compliance and alert semantics.
+replace('className:"badge",style:{color:Jt[c.status]', 'className:"badge","data-implementation":c.status,style:{color:JtText[c.status]')
+replace('className:"badge",style:{color:Jt[G[c.id].status]', 'className:"badge","data-implementation":G[c.id].status,style:{color:JtText[G[c.id].status]')
+replace('color:Jt[y]', 'color:JtText[y]')
+replace('className:"badge",children:"ارزیابی نشده"', 'className:"badge","data-implementation":"unknown",style:{background:"var(--impl-unknown)",color:"var(--impl-unknown-fg)"},children:"ارزیابی نشده"')
 replace("const dcColors=['#15803d','#dc2626','#991b1b','#059669','#2563eb'];","const dcColors=['var(--success)','var(--minor)','var(--danger)','var(--info)','var(--warning)'];")
 replace("function dcBadge(value){return DH('span',{className:'dc-badge',style:{background:value==null?'#64748b':dcColors[value]}},value==null?'ثبت نشده':dcNames[value])}","function dcBadge(value){const c=value==null?'var(--muted)':dcColors[value];return DH('span',{className:'dc-badge',style:{background:'color-mix(in srgb,'+c+' 4%,var(--surface))',color:c,border:'1px solid '+c}},value==null?'ثبت نشده':dcNames[value])}")
 replace('stroke:"#e4ecee"','stroke:"var(--border)"',2)
@@ -65,11 +70,20 @@ new="DH('select',{'aria-label':'پوسته سایت',className:'v7-theme-select'
 replace(old,new)
 # Simplify only the native optional audit fields; retain the audit workflow.
 a=base.index('const DSExtraFields=');b=base.index('const DSOrgGroups=',a)
-base=base[:a]+"""const DSExtraFields={reviewer:'نام ممیز',correctiveAction:'اقدام اصلاحی (در صورت وجود)',previousCompliance:'وضعیت انطباق در ممیزی قبلی'};
+base=base[:a]+"""const DSExtraFields={reviewer:'نام ممیز',correctiveAction:'اقدام اصلاحی در ممیزی قبلی (در صورت وجود)',previousCompliance:'وضعیت انطباق در ممیزی قبلی'};
 function DSExtractAuditExtra(a){const out={};for(const key of Object.keys(DSExtraFields)){if(a[key]!==undefined&&typeof a[key]!=='string')throw Error('اطلاعات تکمیلی نامعتبر است.');out[key]=a[key]||'';}return out;}
-function DSAuditExtra({value,onChange}){return DH('details',{className:'ds-audit-extra'},DH('summary',{},'اطلاعات تکمیلی (اختیاری)'),...Object.entries(DSExtraFields).map(([key,label])=>DH('label',{key},label,key==='previousCompliance'?DH('select',{'aria-label':label,value:value[key]??'',onChange:e=>onChange({...value,[key]:e.target.value})},DH('option',{value:''},'ثبت نشده'),...dcNames.map((name,i)=>DH('option',{key:i,value:String(i)},name))):DH(key==='reviewer'?'input':'textarea',{'aria-label':label,value:value[key]||'',onChange:e=>onChange({...value,[key]:e.target.value})}))));}
+function DSAuditExtra({value,onChange}){return DH('details',{className:'ds-audit-extra'},DH('summary',{},'اطلاعات ممیزی قبلی (در صورت وجود)'),...Object.entries(DSExtraFields).filter(([key])=>key!=='reviewer').map(([key,label])=>DH('label',{key},label,key==='previousCompliance'?DH('select',{'aria-label':label,value:value[key]??'',onChange:e=>onChange({...value,[key]:e.target.value})},DH('option',{value:''},'ثبت نشده'),...dcNames.map((name,i)=>DH('option',{key:i,value:String(i)},name))):DH('textarea',{'aria-label':label,value:value[key]||'',onChange:e=>onChange({...value,[key]:e.target.value})}))));}
+function V10AuditReviewer({value,onChange,disabled}){return DH('label',{className:'v10-current-reviewer'},'نام ممیز',DH('input',{'aria-label':'نام ممیز',value:value.reviewer||'',disabled,onChange:e=>onChange({...value,reviewer:e.target.value}),placeholder:'نام ممیز این بند یا کنترل'}));}
 """+base[b:]
+replace('(0,i.jsx)(DSAuditExtra,{value:n,onChange:L}),(0,i.jsx)(dcField,','(0,i.jsx)(DSAuditExtra,{value:n,onChange:L}),DH(V10AuditReviewer,{value:n,onChange:L,disabled:u}),(0,i.jsx)(dcField,')
 replace("const dsXml=s=>String(s??'')","const dsXml=s=>V8Print(s)")
+# Add the v10 dashboard charts before the legacy-only Babel pass.
+import importlib.util
+_dashboard_spec=importlib.util.spec_from_file_location('dashboard_integration',source/'dashboard-integration.py')
+_dashboard=importlib.util.module_from_spec(_dashboard_spec);_dashboard_spec.loader.exec_module(_dashboard)
+base=_dashboard.integrate(base)
+# Preserve the original banner/logo and use a font-independent pause/play icon.
+replace("paused?'▷':'Ⅱ'","DH('svg',{viewBox:'0 0 24 24',width:16,height:16,fill:'none',stroke:'currentColor',strokeWidth:2,'aria-hidden':true},DH('path',{d:paused?'m9 5 10 7-10 7Z':'M8 5v14M16 5v14'}))")
 # Transform legacy React date inputs and visible date children at build time only.
 def transform_script(match):
  script=match.group(1)
@@ -112,9 +126,9 @@ for family,file in [('Vazirmatn','vazirmatn-arabic-wght-normal.woff2'),('Inter',
  data=base64.b64encode((ROOT/'assets'/file).read_bytes()).decode()
  fonts+="@font-face{font-family:'"+family+"';font-style:normal;font-weight:100 900;src:url(data:font/woff2;base64,"+data+") format('woff2');font-display:swap}"
 bootstrap="""<script>(function(){let pref='light';try{pref=window.localStorage.getItem('didban-theme')||'light'}catch{}window.V7ThemePreference=pref;window.V7ApplyTheme=function(p){window.V7ThemePreference=p;document.documentElement.dataset.theme=p==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):p;try{window.localStorage.setItem('didban-theme',p)}catch{}};window.V7ApplyTheme(pref);matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(window.V7ThemePreference==='system')window.V7ApplyTheme('system')});})();</script>"""
-base=base.replace('</head>','<style>'+fonts+(source/'theme.css').read_text()+'</style>'+bootstrap+'</head>')
+base=base.replace('</head>','<style>'+fonts+''.join((source/name).read_text() for name in ['theme.css','dashboard-v10.css','bcms-recovery.css'])+'</style>'+bootstrap+'</head>')
 # Preserve historical filename aliases; clean HTMLs contain no organization data.
 for filename in ['Didban_Amniat_Offline.html','Didban_ISMS_Offline.html']:(ROOT/filename).write_text(base)
-fresh=base.replace('<meta name="didban-version" content="9">','<meta name="didban-version" content="9"><meta name="didban-store-id" content="fresh-v8">')
+fresh=base.replace('<meta name="didban-version" content="10">','<meta name="didban-version" content="10"><meta name="didban-store-id" content="fresh-v8">')
 (ROOT/'Didban_Amniat_Offline_Fresh.html').write_text(fresh)
-print('Built offline v9:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')
+print('Built offline v10:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')

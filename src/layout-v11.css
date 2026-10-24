@@ -1,0 +1,13 @@
+/* Compact the existing management cards while retaining their plotted size. */
+.v10-implementation-radar-figure{min-height:0}
+.v10-implementation-radar-figure>svg{max-height:460px}
+.v10-implementation-radar .paneltitle{margin-bottom:8px}
+.v10-implementation-radar .chartlegend{margin-top:0;padding-top:0}
+.v10-implementation-pie{min-height:0;gap:12px}
+.v10-implementation-legend>div{padding:7px 0}
+body .charts>.v10-implementation-radar{padding:18px}
+body .v10-compliance-dashboard{padding:18px}
+@media(max-width:650px){.v10-implementation-radar-figure{min-height:0}.v10-implementation-pie{gap:6px}}
+
+.v11-bia-form .v8-date{min-width:0}
+.v11-bia-form .v8-date>input:not([type=hidden]){width:100%;min-width:0}

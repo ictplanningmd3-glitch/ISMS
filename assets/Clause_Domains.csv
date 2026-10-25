@@ -1,0 +1,31 @@
+﻿Item ID,حوزه مفهومی,Domain,Item title
+4.1,شناخت سازمان و شرایط آن,Organizational Context,Understanding the organization and its context
+4.2,ذی‌نفعان و دامنه سیستم مدیریت امنیت اطلاعات,Interested Parties & ISMS Scope,Understanding the needs and expectations of interested parties
+4.3,ذی‌نفعان و دامنه سیستم مدیریت امنیت اطلاعات,Interested Parties & ISMS Scope,Determining the scope of the information security management system
+4.4,ذی‌نفعان و دامنه سیستم مدیریت امنیت اطلاعات,Interested Parties & ISMS Scope,Information security management system
+5.1,رهبری و حاکمیت,Leadership & Governance,Leadership and commitment
+5.2,رهبری و حاکمیت,Leadership & Governance,Policy
+5.3,رهبری و حاکمیت,Leadership & Governance,"Organizational roles, responsibilities and authorities"
+6.1.1,مدیریت ریسک و فرصت‌ها,Risk & Opportunity Management,General — Actions to address risks and opportunities
+6.1.2,مدیریت ریسک امنیت اطلاعات,Information Security Risk Management,Information security risk assessment
+6.1.3,مدیریت ریسک امنیت اطلاعات,Information Security Risk Management,Information security risk treatment
+6.2,اهداف و طرح‌ریزی تغییرات,Objectives & Change Planning,Information security objectives and planning to achieve them
+6.3,اهداف و طرح‌ریزی تغییرات,Objectives & Change Planning,Planning of changes
+7.1,منابع، شایستگی و آگاهی,"Resources, Competence & Awareness",Resources
+7.2,منابع، شایستگی و آگاهی,"Resources, Competence & Awareness",Competence
+7.3,منابع، شایستگی و آگاهی,"Resources, Competence & Awareness",Awareness
+7.4,ارتباطات و اطلاعات مدون,Communication & Documented Information,Communication
+7.5.1,ارتباطات و اطلاعات مدون,Communication & Documented Information,General — Documented information
+7.5.2,ارتباطات و اطلاعات مدون,Communication & Documented Information,Creating and updating
+7.5.3,ارتباطات و اطلاعات مدون,Communication & Documented Information,Control of documented information
+8.1,کنترل عملیات,Operational Control,Operational planning and control
+8.2,کنترل عملیات,Operational Control,Information security risk assessment
+8.3,کنترل عملیات,Operational Control,Information security risk treatment
+9.1,ارزیابی عملکرد و بهبود,Performance Evaluation & Improvement,"Monitoring, measurement, analysis and evaluation"
+9.2.1,ارزیابی عملکرد و بهبود,Performance Evaluation & Improvement,General — Internal audit
+9.2.2,ارزیابی عملکرد و بهبود,Performance Evaluation & Improvement,Internal audit programme
+9.3.1,ارزیابی عملکرد و بهبود,Performance Evaluation & Improvement,General — Management review
+9.3.2,ارزیابی عملکرد و بهبود,Performance Evaluation & Improvement,Management review inputs
+9.3.3,ارزیابی عملکرد و بهبود,Performance Evaluation & Improvement,Management review results
+10.1,ارزیابی عملکرد و بهبود,Performance Evaluation & Improvement,Continual improvement
+10.2,ارزیابی عملکرد و بهبود,Performance Evaluation & Improvement,Nonconformity and corrective action

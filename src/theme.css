@@ -171,7 +171,6 @@ body .ds-banner-pause:focus-visible{outline-color:#B8E7FF}
 
 /* Good Point is an audit finding; implementation effectiveness keeps its own light-purple token. */
 html[data-theme=dark]{--good-point:#A855F7;--good-point-fg:#D8B4FE;--radar-good-point:#A855F7}
-body .dc-good-point-select,body .dc-good-point-option{background:#7E22CE!important;color:#FFFFFF!important;border-color:#7E22CE!important}
 body .v10-compliance-dashboard .v10-compliance-table [data-compliance-column="5"]{background:color-mix(in srgb,var(--good-point) 11%,var(--surface))}
 body .v10-compliance-dashboard .v10-compliance-table [data-compliance-column="6"]{background:color-mix(in srgb,var(--inactive) 9%,var(--surface))}
 @media print{:root,html[data-theme=dark]{--good-point:#7E22CE;--good-point-fg:#7E22CE}}

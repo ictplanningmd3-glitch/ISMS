@@ -1,10 +1,10 @@
 {
   "name": "didban-amniat-offline",
-  "version": "12.0.0",
+  "version": "13.0.0",
   "private": true,
   "scripts": {
     "build": "python3 build.py",
-    "test": "node tests/minimal.test.cjs && node tests/bcms-recovery.test.cjs && node tests/goodpoint.test.cjs && node tests/improvements-v12.test.cjs && node tests/native-compliance.test.cjs"
+    "test": "node tests/minimal.test.cjs && node tests/bcms-recovery.test.cjs && node tests/goodpoint.test.cjs && node tests/improvements-v12.test.cjs && node tests/native-compliance.test.cjs && node tests/taxonomy-v13.test.cjs && node tests/corrective-v13.test.cjs"
   },
   "devDependencies": {
     "@babel/generator": "^8.0.6",

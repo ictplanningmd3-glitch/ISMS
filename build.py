@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Reproducible v12 integration over the unchanged version-6 application.
+"""Reproducible v13 integration over the unchanged version-6 application.
 Usage: python build.py --esbuild /absolute/path/to/esbuild
 """
 from pathlib import Path
-import argparse, base64, colorsys, re, subprocess
+import argparse, base64, colorsys, re, subprocess, importlib.util
 
 ROOT=Path(__file__).resolve().parent
 p=argparse.ArgumentParser();p.add_argument('--esbuild',default=str(ROOT/'node_modules/.bin/esbuild'));args=p.parse_args()
@@ -13,19 +13,23 @@ def replace(old,new,count=1):
  if base.count(old)!=count:raise RuntimeError(f'Integration anchor changed: {old[:95]} (found {base.count(old)}, expected {count})')
  base=base.replace(old,new)
 
+_taxonomy_spec=importlib.util.spec_from_file_location('taxonomy_v13',source/'taxonomy-integration-v13.py')
+_taxonomy=importlib.util.module_from_spec(_taxonomy_spec);_taxonomy_spec.loader.exec_module(_taxonomy)
+base=_taxonomy.integrate(base)
+
 modules=['jalali.js','minimal-domain.js','bcms-recovery.js','compliance.js','improvements-domain-v12.js','minimal-primitives.jsx','date-ui.jsx','minimal-ui.jsx','dashboard-v10.jsx','bcms-recovery.jsx','minimal-rtp.jsx','minimal-bcms.jsx','minimal-radar.jsx','improvements-v12.jsx']
 combined='\n'.join((source/f).read_text() for f in modules)
 compiled=subprocess.run([args.esbuild,'--loader=jsx','--jsx-factory=DH','--jsx-fragment=Ia.Fragment','--target=es2020','--charset=utf8'],input=combined,text=True,capture_output=True,check=True).stdout
-replace('content="6"','content="12"')
+replace('content="6"','content="13"')
 replace("'didban-report-meta'];","'didban-report-meta','didban-rtp-independent-v2','didban-bcms-independent-v2'];")
-replace('function js(){','/*V8_MODULES*/\nfunction js(){const [v7tab,setV7tab]=Ia.useState({rtp:"dashboard",bcms:"dashboard"});')
+replace('function js(){','/*V8_MODULES*/\nfunction js(){const [v7tab,setV7tab]=Ia.useState({rtp:"dashboard",bcms:"dashboard",improvements:"projects"});')
 old='let Jd=[["dashboard","نمای کلی",to],["clauses","الزامات استاندارد",uo],["controls","کنترل‌های Annex A",vt],["improvements","اقدامات بهبود",Qt],["method","روش ارزیابی",fo],["risk","مدیریت ریسک",vt],["support","پشتیبانی سایت",()=>DH(DSIcon,{name:"support",size:19})]];'
 nav=[('dashboard','داشبورد مدیریتی','dashboard'),('clauses','الزامات استاندارد','list'),('controls','کنترل‌های Annex A','shield'),('improvements','اقدامات اصلاحی','correct'),('rtp','Risk Treatment Plan','target'),('method','روش ارزیابی','method'),('risk','مدیریت ریسک','risk'),('bcms','تداوم کسب‌وکار (BCMS)','activity'),('support','پشتیبانی سایت','support')]
 import json
 new='let Jd=['+','.join('['+json.dumps(k)+','+json.dumps(title,ensure_ascii=False)+',()=>DH(V7Icon,{name:'+json.dumps(icon)+',size:19})]' for k,title,icon in nav)+'];'
 replace(old,new)
 oldnav='children:Jd.map(([c,y,P])=>(0,i.jsxs)("button",{className:a===c?"active":"",onClick:()=>{e(c),m("all"),S("all"),f(""),ja("all")},children:[(0,i.jsx)(P,{size:19}),y,c==="controls"&&(0,i.jsx)("em",{children:"۹۳"})]},c))'
-newnav='children:Jd.map(([c,y,P])=>DH(Ia.Fragment,{key:c},DH("button",{className:a===c?"active":"",onClick:()=>{e(c);m("all");S("all");f("");ja("all");},"aria-current":a===c?"page":undefined},DH(P,{}),DH("span",{},y,c==="rtp"?DH("small",{style:{display:"block"}},"برنامه‌های مقابله با ریسک"):null),c==="controls"?DH("em",{},"۹۳"):null),a===c&&(c==="rtp"||c==="bcms")?DH(V7Subnav,{type:c,tab:v7tab[c],onTab:t=>setV7tab(prev=>({...prev,[c]:t}))}):null))'
+newnav='children:Jd.map(([c,y,P])=>DH(Ia.Fragment,{key:c},DH("button",{className:a===c?"active":"",onClick:()=>{e(c);m("all");S("all");f("");ja("all");},"aria-current":a===c?"page":undefined},DH(P,{}),DH("span",{},y,c==="rtp"?DH("small",{style:{display:"block"}},"برنامه‌های مقابله با ریسک"):null),c==="controls"?DH("em",{},"۹۳"):null),a===c?(c==="improvements"?DH(V13CorrectiveSubnav,{tab:v7tab.improvements,onTab:t=>setV7tab(prev=>({...prev,improvements:t}))}):(c==="rtp"||c==="bcms")?DH(V7Subnav,{type:c,tab:v7tab[c],onTab:t=>setV7tab(prev=>({...prev,[c]:t}))}):null):null))'
 replace(oldnav,newnav)
 replace('a==="risk"||a==="support"?"none":undefined','["risk","support","rtp","bcms"].includes(a)?"none":undefined')
 replace('a==="support"?(0,i.jsx)(DSSupport,','(a==="rtp"||a==="bcms")?DH(V7Module,{key:a,type:a,tab:v7tab[a],onTab:t=>setV7tab(prev=>({...prev,[a]:t}))}):a==="support"?(0,i.jsx)(DSSupport,')
@@ -82,7 +86,7 @@ import importlib.util
 _dashboard_spec=importlib.util.spec_from_file_location('dashboard_integration',source/'dashboard-integration.py')
 _dashboard=importlib.util.module_from_spec(_dashboard_spec);_dashboard_spec.loader.exec_module(_dashboard)
 base=_dashboard.integrate(base)
-for _name in ['compliance-integration-v12','improvements-integration-v12']:
+for _name in ['compliance-integration-v12','improvements-integration-v12','dashboard-integration-v13','corrective-integration-v13']:
  _spec=importlib.util.spec_from_file_location(_name,source/(_name+'.py'))
  _integration=importlib.util.module_from_spec(_spec);_spec.loader.exec_module(_integration)
  base=_integration.integrate(base)
@@ -130,9 +134,9 @@ for family,file in [('Vazirmatn','vazirmatn-arabic-wght-normal.woff2'),('Inter',
  data=base64.b64encode((ROOT/'assets'/file).read_bytes()).decode()
  fonts+="@font-face{font-family:'"+family+"';font-style:normal;font-weight:100 900;src:url(data:font/woff2;base64,"+data+") format('woff2');font-display:swap}"
 bootstrap="""<script>(function(){let pref='light';try{pref=window.localStorage.getItem('didban-theme')||'light'}catch{}window.V7ThemePreference=pref;window.V7ApplyTheme=function(p){window.V7ThemePreference=p;document.documentElement.dataset.theme=p==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):p;try{window.localStorage.setItem('didban-theme',p)}catch{}};window.V7ApplyTheme(pref);matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(window.V7ThemePreference==='system')window.V7ApplyTheme('system')});})();</script>"""
-base=base.replace('</head>','<style>'+fonts+''.join((source/name).read_text() for name in ['theme.css','dashboard-v10.css','bcms-recovery.css','layout-v11.css','improvements-v12.css'])+'</style>'+bootstrap+'</head>')
+base=base.replace('</head>','<style>'+fonts+''.join((source/name).read_text() for name in ['theme.css','dashboard-v10.css','bcms-recovery.css','layout-v11.css','improvements-v12.css','dashboard-v13.css'])+'</style>'+bootstrap+'</head>')
 # Preserve historical filename aliases; clean HTMLs contain no organization data.
 for filename in ['Didban_Amniat_Offline.html','Didban_ISMS_Offline.html']:(ROOT/filename).write_text(base)
-fresh=base.replace('<meta name="didban-version" content="12">','<meta name="didban-version" content="12"><meta name="didban-store-id" content="fresh-v8">')
+fresh=base.replace('<meta name="didban-version" content="13">','<meta name="didban-version" content="13"><meta name="didban-store-id" content="fresh-v8">')
 (ROOT/'Didban_Amniat_Offline_Fresh.html').write_text(fresh)
-print('Built offline v12:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')
+print('Built offline v13:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')

@@ -15,7 +15,7 @@ with sync_playwright() as pw:
  assert page.locator('[data-compliance="unknown"]').count()==93
  assert page.locator('.v9-radar-legend>span').count()==7
  # Each compliance value is deliberately paired with a conflicting implementation status.
- ids=['A.5.1','A.5.2','A.5.3','A.5.4','A.5.5','A.5.6','A.5.8'];values=[2,1,4,3,0,5,None]
+ ids=['A.5.1','A.5.2','A.5.3','A.5.4','A.5.5','A.5.6','A.5.8'];values=[5,0,4,3,1,2,None]
  page.evaluate("({ids,values})=>{const r=JSON.parse(localStorage.getItem('didban-security-workspaces-v1:default'));const key='didban-project:default:'+r.activeId+':didban-isms-offline-v1';localStorage.setItem(key,JSON.stringify(Object.fromEntries(ids.map((id,i)=>[id,{id,applicable:true,status:4-i%5,compliance:values[i],documents:'',observations:'',reason:'',owner:'',action:'',due:''}]))));}",{'ids':ids,'values':values});page.reload()
  known=[];colors=[]
  for i,id in enumerate(ids):

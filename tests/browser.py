@@ -15,7 +15,7 @@ with TemporaryDirectory() as tmp, sync_playwright() as p:
  def raw(kind):return page.evaluate("kind=>{const key=Object.keys(localStorage).find(k=>k.endsWith(':didban-'+kind+'-independent-v2'));return key?JSON.parse(localStorage.getItem(key)):null;}",kind)
  assert page.locator('aside nav>button').count()==9;assert page.locator('[data-standard-dot]').count()==93
  page.locator('[data-standard-dot="A.5.1"]').click();page.get_by_text('اطلاعات ممیزی قبلی (در صورت وجود)',exact=True).click();assert page.locator('.ds-audit-extra label').count()==2
- assert page.get_by_label('وضعیت انطباق در ممیزی قبلی',exact=True).locator('option').count()==6
+ assert page.get_by_label('وضعیت انطباق در ممیزی قبلی',exact=True).locator('option').count()==7
  page.get_by_label('مهلت اقدام',exact=True).fill('۱۴۰۵/۱۲/۰۱');page.get_by_label('نام ممیز',exact=True).fill('ممیز آزمون');page.get_by_label('وضعیت انطباق در ممیزی قبلی',exact=True).select_option('1');page.get_by_role('button',name='ذخیره ارزیابی',exact=True).click();expect(page.get_by_role('dialog')).to_have_count(0)
  main('Risk Treatment Plan');assert page.locator('aside .v7-subnav button').count()==3;tab(1);page.locator('.v8-file input').set_input_files(str(out/'import.xlsx'));expect(page.get_by_label('درصد پیشرفت ردیف 1',exact=True)).to_have_value('40')
  paste('عنوان پروژه ردیف 1','جدید\tMitigate\nدوم\tAvoid');expect(page.get_by_label('عنوان پروژه ردیف 2',exact=True)).to_have_value('دوم');paste('درصد پیشرفت ردیف 1','101\tactive\n50\tactive');assert page.get_by_label('درصد پیشرفت ردیف 1',exact=True).input_value()=='40';assert len(raw('rtp')['records']['projects'])==2

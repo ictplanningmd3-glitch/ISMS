@@ -29,6 +29,7 @@
  --radar-sweep:#7DD3FC; --radar-major:#F87171; --radar-minor:#FB923C;
  --radar-improvement:#FBBF24; --radar-observation:#60A5FA;
  --radar-conformity:#4ADE80; --radar-unknown:#94A3B8;
+ --good-point:#7E22CE; --good-point-fg:#7E22CE; --radar-good-point:#9333EA;
  /* Implementation is separate from audit compliance and BCMS readiness. */
  --impl-none:#DC2626; --impl-planned:#FACC15; --impl-partial:#14B8A6;
  --impl-implemented:#16A34A; --impl-effective:#C4B5FD; --impl-unknown:#CBD5E1;
@@ -167,3 +168,11 @@ body .ds-banner-pause:focus-visible{outline-color:#B8E7FF}
 @media(max-width:520px){body .ds-audit-banner{padding:22px 20px 54px;min-height:275px}body .ds-banner-copy{max-width:100%}body .ds-audit-banner h1,body .ds-audit-banner h2{font-size:21px;max-width:100%;line-height:1.85}body .ds-banner-copy>span{font-size:11px}body .ds-banner-copy p{font-size:14px}body .ds-banner-copy small{display:block;max-width:88%;font-size:11px}body .ds-banner-art{width:100%;left:-42%;opacity:.12;z-index:0}body .ds-banner-copy{z-index:2}body .ds-audit-banner::after{right:20px;left:20px}}
 @media(prefers-reduced-motion:reduce){body .ds-audit-banner .ds-orbit,body .ds-audit-banner .ds-signal,body .ds-audit-banner .ds-scan{animation:none!important}}
 @media print{body .ds-audit-banner{background:#FFFFFF!important;color:#0F172A!important;box-shadow:none;border-color:#CBD5E1}body .ds-audit-banner::before,body .ds-audit-banner::after,body .ds-banner-art,body .ds-banner-pause{display:none!important}body .ds-banner-copy{max-width:100%}body .ds-banner-copy>span{color:#0F172A;background:#F1F5F9;border-color:#CBD5E1}body .ds-audit-banner h1,body .ds-audit-banner h2{color:#0F172A}body .ds-banner-copy p,body .ds-banner-copy small,body .ds-audit-banner .v8-en{color:#334155}}
+
+/* Good Point is an audit finding; implementation effectiveness keeps its own light-purple token. */
+html[data-theme=dark]{--good-point:#A855F7;--good-point-fg:#D8B4FE;--radar-good-point:#A855F7}
+body .dc-good-point-select,body .dc-good-point-option{background:#7E22CE!important;color:#FFFFFF!important;border-color:#7E22CE!important}
+body .v10-compliance-dashboard .v10-compliance-table [data-compliance-column="5"]{background:color-mix(in srgb,var(--good-point) 11%,var(--surface))}
+body .v10-compliance-dashboard .v10-compliance-table [data-compliance-column="6"]{background:color-mix(in srgb,var(--inactive) 9%,var(--surface))}
+@media print{:root,html[data-theme=dark]{--good-point:#7E22CE;--good-point-fg:#7E22CE}}
+@media(min-width:1201px){body .v10-compliance-dashboard .dc-summary{grid-template-columns:repeat(7,minmax(0,1fr))}}

@@ -1,0 +1,14 @@
+const assert=require('node:assert/strict');
+const D=require('../src/improvements-domain-v12.js');
+const date=s=>/^\d{4}-\d{2}-\d{2}$/.test(s),scopes=[{id:'clause:4',itemIds:['4.1','4.2']},{id:'annex:governance',itemIds:['A.5.1','A.5.2']},{id:'annex:people',itemIds:['A.6.1']}];
+const projects=[{months:1,progress:25,status:'active',due:'2026-01-01',mappedIds:['4.1','4.2','A.5.1'],scopeIds:['clause:4','annex:governance']},{months:2,progress:60,status:'blocked',due:'2027-01-01',mappedIds:['A.5.2'],scopeIds:['annex:people']},{months:3,progress:100,status:'completed',due:'2026-01-01',mappedIds:[],scopeIds:[]}];
+assert.deepEqual(projects.map(D.group),['A','B','C']);
+assert.deepEqual(D.scopeCounts(projects,scopes).map(s=>s.count),[1,2,1],'heading and multiple links never double-count a project');
+const summary=D.summary(projects,'2026-02-01');
+assert.equal(summary.progress,62);assert.equal(summary.overdue,1,'completed project is never overdue');assert.deepEqual(summary.groups.map(g=>[g.key,g.count,g.progress]),[['A',1,25],['B',1,60],['C',1,100]]);
+const budget=D.budget({approved:'1000',approvedDate:'2026-01-01',allocations:[{id:'1',amount:'100',date:'2026-01-02'},{id:'2',amount:250,date:'2026-01-03'}]},date);
+assert.deepEqual(D.totals(budget),{approved:1000,allocated:350,remaining:650});
+assert.deepEqual(D.totals(D.budget(undefined,date)),{approved:null,allocated:0,remaining:null});
+assert.equal(D.totals({approved:100,allocations:[{amount:150}]}).remaining,-50,'over-allocation remains explicit, not silently clamped');
+for(const raw of [{approved:'oops'},{approved:-1},{approved:100},{approvedDate:'2026-01-01'},{approved:100,approvedDate:'bad'},{approved:100,approvedDate:'2026-01-01',allocations:[{id:'1',amount:'',date:'2026-01-02'}]},{approved:100,approvedDate:'2026-01-01',allocations:[{id:'1',amount:25,date:'2026-01-02'},{id:'1',amount:25,date:'2026-01-02'}]}])assert.throws(()=>D.budget(raw,date));
+console.log('7 corrective-project domain checks passed');

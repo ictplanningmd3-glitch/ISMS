@@ -1,4 +1,4 @@
-"""Focused integration checks for the v9 compliance radar, themes, and create dialog."""
+"""Focused regression checks for compliance radar (including Good Point), themes, and create dialog."""
 from playwright.sync_api import sync_playwright, expect
 from pathlib import Path
 import argparse, math, json, os
@@ -13,15 +13,16 @@ with sync_playwright() as pw:
  assert page.locator('[data-compliance-divider]').count()==10
  assert page.locator('[data-standard-dot]').count()==93
  assert page.locator('[data-compliance="unknown"]').count()==93
- assert page.locator('.v9-radar-legend>span').count()==6
+ assert page.locator('.v9-radar-legend>span').count()==7
  # Each compliance value is deliberately paired with a conflicting implementation status.
- ids=['A.5.1','A.5.2','A.5.3','A.5.4','A.5.5','A.5.6'];values=[2,1,4,3,0,None]
+ ids=['A.5.1','A.5.2','A.5.3','A.5.4','A.5.5','A.5.6','A.5.8'];values=[2,1,4,3,0,5,None]
  page.evaluate("({ids,values})=>{const r=JSON.parse(localStorage.getItem('didban-security-workspaces-v1:default'));const key='didban-project:default:'+r.activeId+':didban-isms-offline-v1';localStorage.setItem(key,JSON.stringify(Object.fromEntries(ids.map((id,i)=>[id,{id,applicable:true,status:4-i%5,compliance:values[i],documents:'',observations:'',reason:'',owner:'',action:'',due:''}]))));}",{'ids':ids,'values':values});page.reload()
  known=[];colors=[]
  for i,id in enumerate(ids):
-  dot=page.locator('[data-standard-dot="'+id+'"]');assert dot.get_attribute('data-compliance-rank')==('outside' if i==5 else str(i));xy=dot.evaluate("e=>[+e.getAttribute('cx'),+e.getAttribute('cy'),getComputedStyle(e).fill]");r=math.hypot(xy[0]-260,xy[1]-260);assert r>190 if i==5 else r<190;known.append(r);colors.append(xy[2])
- assert known[:5]==sorted(known[:5]);assert len(set(colors))==6
- assert [page.locator('.v9-radar-legend>span b').nth(i).inner_text() for i in range(6)]==['۱','۱','۱','۱','۱','۸۸']
+  dot=page.locator('[data-standard-dot="'+id+'"]');assert dot.get_attribute('data-compliance-rank')==('outside' if values[i] is None else str(i));xy=dot.evaluate("e=>[+e.getAttribute('cx'),+e.getAttribute('cy'),getComputedStyle(e).fill]");r=math.hypot(xy[0]-260,xy[1]-260);assert r>190 if values[i] is None else r<190;known.append(r);colors.append(xy[2])
+ assert known[:-1]==sorted(known[:-1]);assert len(set(colors))==len(values)
+ expected_counts=['۱']*(len(values)-1)+[str(93-(len(values)-1)).translate(str.maketrans('0123456789','۰۱۲۳۴۵۶۷۸۹'))]
+ assert [page.locator('.v9-radar-legend>span b').nth(i).inner_text() for i in range(len(values))]==expected_counts
  # Changing only implementation cannot move an audit compliance point.
  before=page.locator('[data-standard-dot="A.5.1"]').get_attribute('cy');page.evaluate("()=>{const key=Object.keys(localStorage).find(k=>k.endsWith(':didban-isms-offline-v1'));const data=JSON.parse(localStorage.getItem(key));data['A.5.1'].status=0;localStorage.setItem(key,JSON.stringify(data));}");page.reload();assert page.locator('[data-standard-dot="A.5.1"]').get_attribute('cy')==before
  page.get_by_role('button',name='توقف پویانمایی',exact=True).click();assert page.locator('.v8-sweep').evaluate("e=>getComputedStyle(e).animationPlayState")=='paused'

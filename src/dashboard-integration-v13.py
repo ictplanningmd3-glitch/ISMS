@@ -13,5 +13,5 @@ def integrate(base):
     replace('DH(V12ProjectDashboard,{projects:ro,onEdit:c=>O(c),compact:true}),','')
     start=base.index('const dsDashboardTargets=')
     end=base.index('function DSQuickAccess()',start)
-    base=base[:start]+"const dsDashboardTargets=[['health','وضعیت کلی','.org-health'],['stats','شاخص‌ها','.stats'],['charts','نمودار پیاده‌سازی','.charts'],['concept','رادار انطباق','.v8-concept'],['distribution','توزیع عدم‌انطباق‌ها','[data-v13-nc-dashboard]'],['compliance','انطباق با استاندارد','.dc-section']];\n"+base[end:]
+    base=base[:start]+"const dsDashboardTargets=[['health','وضعیت کلی','.org-health'],['stats','شاخص‌ها','.stats'],['charts','نمودار پیاده‌سازی','.charts'],['concept','رادار انطباق','.v8-concept'],['distribution','توزیع نتایج ممیزی','[data-v13-nc-dashboard]'],['compliance','انطباق با استاندارد','.dc-section']];\n"+base[end:]
     return base

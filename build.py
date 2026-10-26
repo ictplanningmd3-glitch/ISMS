@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible v13 integration over the unchanged version-6 application.
+"""Reproducible v14 integration over the unchanged version-6 application.
 Usage: python build.py --esbuild /absolute/path/to/esbuild
 """
 from pathlib import Path
@@ -20,7 +20,7 @@ base=_taxonomy.integrate(base)
 modules=['jalali.js','minimal-domain.js','bcms-recovery.js','compliance.js','improvements-domain-v12.js','minimal-primitives.jsx','date-ui.jsx','minimal-ui.jsx','dashboard-v10.jsx','bcms-recovery.jsx','minimal-rtp.jsx','minimal-bcms.jsx','minimal-radar.jsx','improvements-v12.jsx']
 combined='\n'.join((source/f).read_text() for f in modules)
 compiled=subprocess.run([args.esbuild,'--loader=jsx','--jsx-factory=DH','--jsx-fragment=Ia.Fragment','--target=es2020','--charset=utf8'],input=combined,text=True,capture_output=True,check=True).stdout
-replace('content="6"','content="13"')
+replace('content="6"','content="14"')
 replace("'didban-report-meta'];","'didban-report-meta','didban-rtp-independent-v2','didban-bcms-independent-v2'];")
 replace('function js(){','/*V8_MODULES*/\nfunction js(){const [v7tab,setV7tab]=Ia.useState({rtp:"dashboard",bcms:"dashboard",improvements:"projects"});')
 old='let Jd=[["dashboard","نمای کلی",to],["clauses","الزامات استاندارد",uo],["controls","کنترل‌های Annex A",vt],["improvements","اقدامات بهبود",Qt],["method","روش ارزیابی",fo],["risk","مدیریت ریسک",vt],["support","پشتیبانی سایت",()=>DH(DSIcon,{name:"support",size:19})]];'
@@ -137,6 +137,6 @@ bootstrap="""<script>(function(){let pref='light';try{pref=window.localStorage.g
 base=base.replace('</head>','<style>'+fonts+''.join((source/name).read_text() for name in ['theme.css','dashboard-v10.css','bcms-recovery.css','layout-v11.css','improvements-v12.css','dashboard-v13.css'])+'</style>'+bootstrap+'</head>')
 # Preserve historical filename aliases; clean HTMLs contain no organization data.
 for filename in ['Didban_Amniat_Offline.html','Didban_ISMS_Offline.html']:(ROOT/filename).write_text(base)
-fresh=base.replace('<meta name="didban-version" content="13">','<meta name="didban-version" content="13"><meta name="didban-store-id" content="fresh-v8">')
+fresh=base.replace('<meta name="didban-version" content="14">','<meta name="didban-version" content="14"><meta name="didban-store-id" content="fresh-v8">')
 (ROOT/'Didban_Amniat_Offline_Fresh.html').write_text(fresh)
-print('Built offline v13:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')
+print('Built offline v14:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')

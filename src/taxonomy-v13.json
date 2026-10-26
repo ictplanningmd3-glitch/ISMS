@@ -1,22 +1,14 @@
 {
-  "version": 13,
-  "basis": "Authoritative domain titles, order and control assignments supplied directly by the user.",
+  "version": 14,
+  "basis": "Authoritative Annex A mapping supplied directly by the user; requirements revised to eight domains by the user-requested context/scope and risk-management merges.",
   "clauses": [
     {
       "id": "context",
-      "title": "شناخت سازمان و شرایط آن",
-      "short": "شناخت سازمان",
-      "english": "Organizational Context",
+      "title": "شناخت سازمان، دامنه و ذینفعان",
+      "short": "شناخت و دامنه",
+      "english": "Organizational Context, Scope & Interested Parties",
       "itemIds": [
-        "4.1"
-      ]
-    },
-    {
-      "id": "interested-scope",
-      "title": "ذی‌نفعان و دامنه سیستم مدیریت امنیت اطلاعات",
-      "short": "ذی‌نفعان و دامنه",
-      "english": "Interested Parties & ISMS Scope",
-      "itemIds": [
+        "4.1",
         "4.2",
         "4.3",
         "4.4"
@@ -34,20 +26,12 @@
       ]
     },
     {
-      "id": "risk-opportunity",
-      "title": "مدیریت ریسک و فرصت‌ها",
-      "short": "ریسک و فرصت",
-      "english": "Risk & Opportunity Management",
+      "id": "risk-management",
+      "title": "مدیریت ریسک",
+      "short": "مدیریت ریسک",
+      "english": "Risk Management",
       "itemIds": [
-        "6.1.1"
-      ]
-    },
-    {
-      "id": "security-risk",
-      "title": "مدیریت ریسک امنیت اطلاعات",
-      "short": "ریسک امنیت اطلاعات",
-      "english": "Information Security Risk Management",
-      "itemIds": [
+        "6.1.1",
         "6.1.2",
         "6.1.3"
       ]

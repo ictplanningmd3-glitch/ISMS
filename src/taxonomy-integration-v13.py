@@ -1,6 +1,6 @@
 """One shared conceptual taxonomy for radar, filters, project scopes and reports.
-Both ten-domain mappings and every control/clause assignment follow the
-complete, authoritative taxonomy supplied directly by the user.
+The ten Annex A domains and eight requirements domains follow the user mapping
+and the requested context/scope and risk-management merges in version 14.
 """
 from pathlib import Path
 from collections import Counter
@@ -15,11 +15,11 @@ CLAUSE_IDS = ['4.1','4.2','4.3','4.4','5.1','5.2','5.3','6.1.1','6.1.2','6.1.3',
 def load_taxonomy():
     taxonomy = json.loads(SOURCE.read_text())
     expected = {f'A.{domain}.{n}' for domain, count in [(5,37),(6,8),(7,14),(8,34)] for n in range(1,count+1)}
-    for key,item_key,item_ids,label in [('groups','controls',expected,'Annex A'),('clauses','itemIds',set(CLAUSE_IDS),'standard requirements')]:
+    for key,item_key,item_ids,label,domain_count in [('groups','controls',expected,'Annex A',10),('clauses','itemIds',set(CLAUSE_IDS),'standard requirements',8)]:
         groups=taxonomy[key]
         items=[item for group in groups for item in group[item_key]]
-        if len(groups)!=10 or len({g['id'] for g in groups})!=10:
-            raise RuntimeError(f'The canonical {label} taxonomy must contain ten unique domains.')
+        if len(groups)!=domain_count or len({g['id'] for g in groups})!=domain_count:
+            raise RuntimeError(f'The canonical {label} taxonomy must contain {domain_count} unique domains.')
         if len(items)!=len(item_ids) or set(items)!=item_ids or any(n!=1 for n in Counter(items).values()):
             raise RuntimeError(f'The taxonomy must assign all {label} items exactly once.')
         for group in groups:
@@ -58,7 +58,7 @@ def write_assets(taxonomy,native):
     start=native.index('GS={')+3
     finish=native.index(',Yl=[',start)
     names=json.loads(native[start:finish])
-    basis=[['مشخصه','مقدار','Reference',''],['مبنای نام و ترتیب حوزه‌ها','تقسیم‌بندی کامل ارسالی مستقیم کاربر','Authoritative mapping supplied directly by the user',''],['مبنای نگاشت بندها و کنترل‌ها','فهرست صریح اقلام هر یک از ده حوزه در پیام کاربر','Explicit assignments in the user-provided mapping',''],['منبع واحد','src/taxonomy-v13.json','Canonical source',''],['مستندات','docs/ANNEX-A-MAPPING.md','Mapping documentation','']]
+    basis=[['مشخصه','مقدار','Reference',''],['مبنای نام و ترتیب حوزه‌ها','تقسیم‌بندی کامل ارسالی مستقیم کاربر','Authoritative mapping supplied directly by the user',''],['مبنای نگاشت بندها و کنترل‌ها','فهرست ده حوزهٔ کنترل و هشت حوزهٔ الزامات، با ادغام‌های درخواستی نسخهٔ ۱۴','User assignments with the version-14 requirements-domain merges',''],['منبع واحد','src/taxonomy-v13.json','Canonical source',''],['مستندات','docs/ANNEX-A-MAPPING.md','Mapping documentation','']]
     for filename,key,item_key in [('Annex_A_Domains','groups','controls'),('Clause_Domains','clauses','itemIds')]:
         groups=taxonomy[key]
         rows=[['Item ID','حوزه مفهومی','Domain','Item title']]
@@ -66,7 +66,7 @@ def write_assets(taxonomy,native):
             rows.extend([[item,group['title'],group['english'],names[item]] for item in group[item_key]])
         summary=[['Domain ID','حوزه مفهومی','Domain','Item count']]+[[g['id'],g['title'],g['english'],len(g[item_key])] for g in groups]
         text=io.StringIO(newline='')
-        csv.writer(text).writerows(rows)
+        csv.writer(text,lineterminator='\n').writerows(rows)
         (ROOT/'assets'/(filename+'.csv')).write_text('\ufeff'+text.getvalue(),newline='')
         _workbook(ROOT/'assets'/(filename+'.xlsx'),rows,summary,basis)
 
@@ -96,7 +96,7 @@ def integrate(base):
         raise RuntimeError('The canonical audit search metadata anchor changed.')
     base=base.replace(original_search,'item.id,item.title,item.english,item.conceptLabel,item.conceptEnglish,item.group,dsFlatten',1)
     # Retain official domain codes in a separate reference filter; conceptual grouping
-    # for both pages now follows the corresponding ten-category user taxonomy.
+    # for both pages follows the corresponding shared user taxonomy.
     original_filter='(0,i.jsxs)("select",{"aria-label":"حوزه مفهومی",value:H,onChange:c=>ja(c.target.value),disabled:a==="clauses",children:[(0,i.jsx)("option",{value:"all",children:"تمام حوزه‌های مفهومی"}),Yl.map(c=>(0,i.jsx)("option",{value:c.id,children:c.title},c.id))]})'
     updated_filter='DH("select",{"aria-label":"حوزه مفهومی",value:H,onChange:c=>ja(c.target.value)},DH("option",{value:"all"},"تمام حوزه‌های مفهومی"),...V13StandardGroups().filter(c=>c.kind===(a==="clauses"?"clause":"control")).map(c=>DH("option",{key:c.id,value:c.domain},c.title)))'
     if base.count(original_filter)!=1:

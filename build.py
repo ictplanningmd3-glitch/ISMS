@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Reproducible v15 integration over the unchanged version-6 application.
+"""Reproducible v16 integration over the unchanged version-6 application.
 Usage: python build.py --esbuild /absolute/path/to/esbuild
 """
 from pathlib import Path
-import argparse, base64, colorsys, re, subprocess, importlib.util
+import argparse, base64, colorsys, re, subprocess, importlib.util, json
 
 ROOT=Path(__file__).resolve().parent
 p=argparse.ArgumentParser();p.add_argument('--esbuild',default=str(ROOT/'node_modules/.bin/esbuild'));args=p.parse_args()
@@ -16,11 +16,14 @@ def replace(old,new,count=1):
 _taxonomy_spec=importlib.util.spec_from_file_location('taxonomy_v13',source/'taxonomy-integration-v13.py')
 _taxonomy=importlib.util.module_from_spec(_taxonomy_spec);_taxonomy_spec.loader.exec_module(_taxonomy)
 base=_taxonomy.integrate(base)
+_radar_spec=importlib.util.spec_from_file_location('radar_v16',source/'radar-integration-v16.py')
+_radar=importlib.util.module_from_spec(_radar_spec);_radar_spec.loader.exec_module(_radar)
+_radar.write_assets(_taxonomy)
 
-modules=['jalali.js','minimal-domain.js','bcms-recovery.js','compliance.js','implementation-v15.js','improvements-domain-v12.js','minimal-primitives.jsx','date-ui.jsx','minimal-ui.jsx','dashboard-v10.jsx','bcms-recovery.jsx','minimal-rtp.jsx','minimal-bcms.jsx','minimal-radar.jsx','improvements-v12.jsx','implementation-v15.jsx']
-combined='\n'.join((source/f).read_text() for f in modules)
+modules=['jalali.js','minimal-domain.js','bcms-recovery.js','compliance.js','radar-v16.js','implementation-v15.js','improvements-domain-v12.js','minimal-primitives.jsx','date-ui.jsx','minimal-ui.jsx','dashboard-v10.jsx','bcms-recovery.jsx','minimal-rtp.jsx','minimal-bcms.jsx','minimal-radar.jsx','improvements-v12.jsx','implementation-v15.jsx']
+combined='var V16RadarCombined='+json.dumps(_radar.load_groups(),ensure_ascii=False)+';\n'+'\n'.join((source/f).read_text() for f in modules)
 compiled=subprocess.run([args.esbuild,'--loader=jsx','--jsx-factory=DH','--jsx-fragment=Ia.Fragment','--target=es2020','--charset=utf8'],input=combined,text=True,capture_output=True,check=True).stdout
-replace('content="6"','content="15"')
+replace('content="6"','content="16"')
 replace("'didban-report-meta'];","'didban-report-meta','didban-rtp-independent-v2','didban-bcms-independent-v2'];")
 replace('function js(){','/*V8_MODULES*/\nfunction js(){const [v7tab,setV7tab]=Ia.useState({rtp:"dashboard",bcms:"dashboard",improvements:"projects"});')
 old='let Jd=[["dashboard","نمای کلی",to],["clauses","الزامات استاندارد",uo],["controls","کنترل‌های Annex A",vt],["improvements","اقدامات بهبود",Qt],["method","روش ارزیابی",fo],["risk","مدیریت ریسک",vt],["support","پشتیبانی سایت",()=>DH(DSIcon,{name:"support",size:19})]];'
@@ -90,6 +93,7 @@ for _name in ['compliance-integration-v12','improvements-integration-v12','dashb
  _spec=importlib.util.spec_from_file_location(_name,source/(_name+'.py'))
  _integration=importlib.util.module_from_spec(_spec);_spec.loader.exec_module(_integration)
  base=_integration.integrate(base)
+base=_radar.integrate(base)
 # Preserve the original banner/logo and use a font-independent pause/play icon.
 replace("paused?'▷':'Ⅱ'","DH('svg',{viewBox:'0 0 24 24',width:16,height:16,fill:'none',stroke:'currentColor',strokeWidth:2,'aria-hidden':true},DH('path',{d:paused?'m9 5 10 7-10 7Z':'M8 5v14M16 5v14'}))")
 # Transform legacy React date inputs and visible date children at build time only.
@@ -134,9 +138,9 @@ for family,file in [('Vazirmatn','vazirmatn-arabic-wght-normal.woff2'),('Inter',
  data=base64.b64encode((ROOT/'assets'/file).read_bytes()).decode()
  fonts+="@font-face{font-family:'"+family+"';font-style:normal;font-weight:100 900;src:url(data:font/woff2;base64,"+data+") format('woff2');font-display:swap}"
 bootstrap="""<script>(function(){let pref='light';try{pref=window.localStorage.getItem('didban-theme')||'light'}catch{}window.V7ThemePreference=pref;window.V7ApplyTheme=function(p){window.V7ThemePreference=p;document.documentElement.dataset.theme=p==='system'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):p;try{window.localStorage.setItem('didban-theme',p)}catch{}};window.V7ApplyTheme(pref);matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(window.V7ThemePreference==='system')window.V7ApplyTheme('system')});})();</script>"""
-base=base.replace('</head>','<style>'+fonts+''.join((source/name).read_text() for name in ['theme.css','dashboard-v10.css','bcms-recovery.css','layout-v11.css','improvements-v12.css','dashboard-v13.css','implementation-v15.css','bcms-form-v15.css'])+'</style>'+bootstrap+'</head>')
+base=base.replace('</head>','<style>'+fonts+''.join((source/name).read_text() for name in ['theme.css','dashboard-v10.css','bcms-recovery.css','layout-v11.css','improvements-v12.css','dashboard-v13.css','implementation-v15.css','bcms-form-v15.css','radar-v16.css','coverage-v16.css'])+'</style>'+bootstrap+'</head>')
 # Preserve historical filename aliases; clean HTMLs contain no organization data.
 for filename in ['Didban_Amniat_Offline.html','Didban_ISMS_Offline.html']:(ROOT/filename).write_text(base)
-fresh=base.replace('<meta name="didban-version" content="15">','<meta name="didban-version" content="15"><meta name="didban-store-id" content="fresh-v8">')
+fresh=base.replace('<meta name="didban-version" content="16">','<meta name="didban-version" content="16"><meta name="didban-store-id" content="fresh-v8">')
 (ROOT/'Didban_Amniat_Offline_Fresh.html').write_text(fresh)
-print('Built offline v15:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')
+print('Built offline v16:',len(base.encode()),'bytes; legacy content retained; embedded fonts and all code.')

@@ -26,7 +26,7 @@ var V13Corrective = (() => {
  const completed = project => project.status==='completed';
  function metrics(items,data,projects,scopes,today){
   const catalog=new Map(items.map(item=>[item.id,item])),scopeLookup=new Map(scopes.map(scope=>[scope.id,scope]));
-  const assessed=items.filter(item=>{const row=data[item.id];return row&&row.applicable!==false&&Number.isInteger(row.compliance)&&row.compliance>=0&&row.compliance<=5;});
+  const assessed=[...catalog.values()].filter(item=>{const row=data[item.id];return row&&row.applicable!==false&&Number.isInteger(row.compliance)&&row.compliance>=0&&row.compliance<=5;});
   const attention=assessed.filter(item=>findingOrder.includes(data[item.id].compliance));
   // A project can be linked both by its exact item and by a selected heading.
   // Sets prevent either path from counting the same project twice for one item.
@@ -41,7 +41,13 @@ var V13Corrective = (() => {
   const completedByKind=[{key:'clause',kind:'clause',label:'الزامات استاندارد'},{key:'control',kind:'control',label:'کنترل‌های Annex A'}].map(group=>({...group,count:completedLinks.filter(link=>kindsForLink(link).has(group.kind)).length}));
   const completedUnlinkedProjects=completedLinks.filter(link=>!kindsForLink(link).size).map(link=>link.project);
   const actionStates=[{key:'unplanned',label:'برنامه‌ریزی نشده'},{key:'active',label:'در حال اقدام'},{key:'done',label:'اقدام شده'}].map(state=>({...state,count:rows.filter(row=>row.actionStatus===state.key).length}));
-  return {assessed,attention,rows,actionStates,counts:{attention:attention.length,projects:projects.length,completed:completedProjects.length,incomplete:incompleteProjects.length},completedProjects,incompleteProjects,overdueProjects,scheduledProjects,undatedProjects,dueBuckets,groups,completedByKind,completedUnlinkedProjects};
+  // Coverage is the union of actionable audit items linked to at least one project.
+  // A scope/exact-link overlap, or several projects on one item, never adds another item.
+  // Completed projects remain defined coverage; this indicator does not assert closure.
+  const attentionIds=new Set(attention.map(item=>item.id)),coveredItems=rows.filter(row=>row.related.length).map(row=>row.item),uncoveredItems=rows.filter(row=>!row.related.length).map(row=>row.item);
+  const coverageProjects=projectLinks.map(link=>{const itemIds=[...link.itemIds].filter(id=>attentionIds.has(id));return {project:link.project,itemIds,count:itemIds.length};});
+  const coverage={required:attention.length,defined:projects.length,covered:coveredItems.length,uncovered:uncoveredItems.length,percentage:attention.length?coveredItems.length/attention.length*100:null,coveredItems,uncoveredItems,projects:coverageProjects,contributingProjects:coverageProjects.filter(link=>link.count>0)};
+  return {assessed,attention,rows,actionStates,coverage,counts:{attention:attention.length,projects:projects.length,completed:completedProjects.length,incomplete:incompleteProjects.length},completedProjects,incompleteProjects,overdueProjects,scheduledProjects,undatedProjects,dueBuckets,groups,completedByKind,completedUnlinkedProjects};
  }
  return {findingOrder,isDate,completed,metrics};
 })();

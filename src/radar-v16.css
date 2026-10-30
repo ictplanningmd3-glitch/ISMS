@@ -1,0 +1,25 @@
+/* Three scoped radar views; the rest of the management dashboard is unchanged. */
+.v16-radar-tools,.v16-implementation-tools{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.v16-radar-tools label,.v16-implementation-tools label{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-secondary)}
+.v16-radar-tools select,.v16-implementation-tools select{width:auto;min-width:150px;max-width:100%;font-size:12px;padding:7px 10px}
+.v16-radar-intro,.v16-implementation-hint{font-size:12px;line-height:1.9;color:var(--text-secondary);margin:5px 0 12px}
+.v16-implementation-tools{width:100%;align-items:start}
+.v16-implementation-tools>span{font-size:11px;text-align:left;color:var(--text-secondary);line-height:1.8}
+.v16-implementation-scores{width:100%;margin-top:4px}.v16-implementation-scores summary{cursor:pointer;color:var(--primary);font-size:11px;padding:5px 0}.v16-implementation-scores summary small{color:var(--text-secondary);font:10px 'Inter',sans-serif;margin-inline-start:5px}
+.v16-implementation-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 16px;width:100%;font-size:11px;margin-top:3px}
+.v16-implementation-values>span{display:flex;justify-content:space-between;gap:8px;min-width:0;padding:4px 0;border-bottom:1px solid var(--border)}
+.v16-implementation-values b{color:var(--primary);white-space:nowrap;font-variant-numeric:tabular-nums}
+.v16-implementation-hint{font-size:10px;margin:8px 0 0}
+.v16-radar-list{margin-top:18px;border:1px solid var(--border);border-radius:10px;padding:15px;background:var(--surface-alt)}
+.v16-radar-list-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.v16-radar-list-head h3{margin:0;font-size:15px;color:var(--text-primary)}
+.v16-radar-list-head h3:focus{outline:2px solid var(--focus);outline-offset:4px}
+.v16-radar-list-head button{font-size:11px;flex-shrink:0}
+.v16-radar-list>p{color:var(--text-secondary);font-size:11px;margin:10px 0}
+.v16-radar-item-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:380px;overflow:auto;padding:3px}
+.v16-radar-item-grid>button{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 9px;padding:10px;text-align:right;min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:7px}
+.v16-radar-item-grid bdi{font:bold 11px 'Inter',sans-serif;color:var(--primary);padding-top:3px}
+.v16-radar-item-grid>button>span{min-width:0;font-size:12px;overflow-wrap:anywhere}
+.v16-radar-item-grid>button>small{display:flex;align-items:center;gap:6px;grid-column:2;color:var(--text-secondary);font-size:10px}
+.v16-radar-item-grid i{display:inline-block;flex-shrink:0;width:8px;height:8px;border-radius:50%}
+@media(max-width:650px){.v16-radar-tools{width:100%;justify-content:space-between}.v16-radar-tools label,.v16-implementation-tools label{flex-wrap:wrap}.v16-radar-tools button{font-size:10px}.v16-implementation-tools>span{text-align:right}.v16-radar-item-grid{grid-template-columns:1fr}.v16-radar-list{padding:10px}.v16-implementation-values{column-gap:10px;font-size:10px}}

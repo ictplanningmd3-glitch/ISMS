@@ -1,0 +1,26 @@
+/* Corrective Word report picker, scoped to its two entry points. */
+.v18-corrective-report-modal{width:min(730px,calc(100vw - 28px));padding:22px;max-height:calc(100dvh - 36px);overflow:auto}
+.v18-corrective-report-modal .paneltitle{align-items:flex-start;gap:14px;margin-bottom:12px}
+.v18-corrective-report-modal h2{font-size:18px;margin:0;line-height:1.7}
+.v18-corrective-report-modal h2:focus{outline:none}
+.v18-corrective-report-modal .paneltitle>button{flex-shrink:0;font-size:11px}
+.v18-report-intro{font-size:12px;color:var(--text-secondary);line-height:1.9;margin:0 0 16px}
+.v18-report-fields{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:12px}
+.v18-report-fields>label{display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--text-primary);min-width:0}
+.v18-report-fields select{width:100%;min-width:0;font-size:12px}
+.v18-report-fields small{font-size:10px;color:var(--text-secondary);line-height:1.8}
+.v18-report-fields .v18-report-project-select{grid-column:1/-1}
+.v18-report-overdue{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-primary);margin:16px 0}
+.v18-report-overdue input{width:15px;height:15px;margin:0}
+.v18-report-selection{display:flex;align-items:baseline;gap:10px;border:1px solid var(--border);background:var(--surface-alt);border-radius:8px;padding:11px 12px;margin:12px 0;color:var(--text-secondary);font-size:11px;line-height:1.9}
+.v18-report-selection>b{font-size:14px;color:var(--text-primary);white-space:nowrap}
+.v18-report-empty{font-size:11px;line-height:1.9;color:var(--text-secondary);margin:8px 0}
+.v18-report-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--border);padding-top:15px;margin-top:16px}
+.v18-report-footer button{font-size:12px}
+.v18-report-footer small{font-size:10px;color:var(--text-secondary)}
+.v18-report-done{font-size:12px;color:var(--success);line-height:1.9;margin:8px 0}
+.v18-corrective-reports-embedded{border:1px solid var(--border);border-radius:9px;padding:12px;margin:14px 0;background:var(--surface)}
+.v18-corrective-reports-embedded>summary{font-size:13px;font-weight:600;cursor:pointer;color:var(--text-primary);line-height:1.8}
+.v18-corrective-reports-embedded>summary small{display:block;font-size:10px;font-weight:400;color:var(--text-secondary)}
+.v18-corrective-reports-embedded[open]>.v18-corrective-report-content{margin-top:14px}
+@media(max-width:650px){.v18-corrective-report-modal{padding:16px}.v18-corrective-report-modal h2{font-size:16px}.v18-report-fields{grid-template-columns:1fr}.v18-report-selection{flex-direction:column;gap:3px}.v18-report-footer{align-items:stretch;flex-direction:column}.v18-report-footer button{width:100%}}

@@ -26,10 +26,16 @@
  /* The compliance radar retains a dark navy canvas in both interface themes. */
  --radar-bg:#071932; --radar-raised:#193966; --radar-grid:#345E87;
  --radar-divider:#6396C4; --radar-text:#D8E9FF; --radar-outline:#071932;
- --radar-sweep:#7DD3FC; --radar-major:#F87171; --radar-minor:#FB923C;
- --radar-improvement:#FBBF24; --radar-observation:#60A5FA;
- --radar-conformity:#4ADE80; --radar-unknown:#94A3B8;
- --good-point:#7E22CE; --good-point-fg:#7E22CE; --radar-good-point:#9333EA;
+ /* Audit results use the supplied palette independently of alerts/implementation. */
+ --audit-good-point:#168B78; --audit-conformity:#4FAE66; --audit-improvement:#3C91CF;
+ --audit-observation:#D6A13D; --audit-minor:#E87945; --audit-major:#C83E50;
+ --audit-unknown:var(--inactive); --audit-good-point-fg:#0D6657; --audit-conformity-fg:#256A36;
+ --audit-improvement-fg:#1D5F91; --audit-observation-fg:#825B0A;
+ --audit-minor-fg:#9F4016; --audit-major-fg:#9F2637;
+ --radar-sweep:#7DD3FC; --radar-major:var(--audit-major); --radar-minor:var(--audit-minor);
+ --radar-improvement:var(--audit-improvement); --radar-observation:var(--audit-observation);
+ --radar-conformity:var(--audit-conformity); --radar-unknown:#94A3B8;
+ --good-point:var(--audit-good-point); --good-point-fg:var(--audit-good-point-fg); --radar-good-point:var(--audit-good-point);
  /* Implementation is separate from audit compliance and BCMS readiness. */
  --impl-none:#DC2626; --impl-planned:#FACC15; --impl-partial:#14B8A6;
  --impl-implemented:#16A34A; --impl-effective:#C4B5FD; --impl-unknown:#CBD5E1;
@@ -66,6 +72,8 @@ html[data-theme=dark] {
  --success-bg:#11372C; --warning-bg:#3A2F18; --critical-bg:#3B222C;
  --info-bg:#1B3453; --maintenance-bg:#30264C; --inactive-bg:#1D2B40;
  --success-fg:#4ADE80; --warning-fg:#FBBF24; --critical-fg:#FCA5A5; --info-fg:#93C5FD;
+ --audit-good-point-fg:#77DBC7; --audit-conformity-fg:#9BD9AA; --audit-improvement-fg:#90C5EC;
+ --audit-observation-fg:#E8C87A; --audit-minor-fg:#F6AD88; --audit-major-fg:#F29FAA;
  --hover:#1D2B40; --disabled-bg:#1D2B40; --disabled-fg:#94A3B8;
  --input-bg:#151F30; --input-border:#6C7D94; --table-head:#1D2B40;
  --table-hover:#1A293E; --popover:#1D2B40; --tooltip-bg:#F1F5F9; --tooltip-fg:#0B1220;
@@ -169,9 +177,8 @@ body .ds-banner-pause:focus-visible{outline-color:#B8E7FF}
 @media(prefers-reduced-motion:reduce){body .ds-audit-banner .ds-orbit,body .ds-audit-banner .ds-signal,body .ds-audit-banner .ds-scan{animation:none!important}}
 @media print{body .ds-audit-banner{background:#FFFFFF!important;color:#0F172A!important;box-shadow:none;border-color:#CBD5E1}body .ds-audit-banner::before,body .ds-audit-banner::after,body .ds-banner-art,body .ds-banner-pause{display:none!important}body .ds-banner-copy{max-width:100%}body .ds-banner-copy>span{color:#0F172A;background:#F1F5F9;border-color:#CBD5E1}body .ds-audit-banner h1,body .ds-audit-banner h2{color:#0F172A}body .ds-banner-copy p,body .ds-banner-copy small,body .ds-audit-banner .v8-en{color:#334155}}
 
-/* Good Point is an audit finding; implementation effectiveness keeps its own light-purple token. */
-html[data-theme=dark]{--good-point:#A855F7;--good-point-fg:#D8B4FE;--radar-good-point:#A855F7}
+/* Good Point keeps the same audit fill in either theme; implementation has separate colors. */
 body .v10-compliance-dashboard .v10-compliance-table [data-compliance-column="5"]{background:color-mix(in srgb,var(--good-point) 11%,var(--surface))}
 body .v10-compliance-dashboard .v10-compliance-table [data-compliance-column="6"]{background:color-mix(in srgb,var(--inactive) 9%,var(--surface))}
-@media print{:root,html[data-theme=dark]{--good-point:#7E22CE;--good-point-fg:#7E22CE}}
+@media print{:root,html[data-theme=dark]{--audit-good-point-fg:#0D6657;--audit-conformity-fg:#256A36;--audit-improvement-fg:#1D5F91;--audit-observation-fg:#825B0A;--audit-minor-fg:#9F4016;--audit-major-fg:#9F2637}}
 @media(min-width:1201px){body .v10-compliance-dashboard .dc-summary{grid-template-columns:repeat(7,minmax(0,1fr))}}

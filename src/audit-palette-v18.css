@@ -1,0 +1,51 @@
+/* Audit-result palette and a single aligned compliance table; implementation stays separate. */
+body .dc-badge[data-audit-status]{display:inline-flex;align-items:center;gap:6px;line-height:1.65;font-weight:600}
+body .dc-badge[data-audit-status]::before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:var(--audit-status-color)}
+/* Audit summary cards inherit the selected theme instead of a legacy light fill. */
+body .v10-compliance-dashboard .dc-summary>article{background:var(--surface-alt);border-color:var(--border);color:var(--text-secondary)}
+body .v10-compliance-dashboard .dc-summary>article>strong{color:var(--text-primary)}
+/* Percentage text remains legible on the exact supplied fills in both themes. */
+html[data-theme] body .v13-nc-track>span[data-v13-nc-status]>span,html[data-theme] body .v14-finding-stack-track>span[data-v14-finding-status]>span{color:#000000}
+html[data-theme] body .v13-nc-track>span[data-v13-nc-status="2"]>span,html[data-theme] body .v14-finding-stack-track>span[data-v14-finding-status="2"]>span{color:#FFFFFF}
+.v18-compliance-table-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:24px 0 11px}
+.v18-compliance-table-heading h3{font-size:15px;margin:0;line-height:1.8}
+.v18-compliance-table-heading small{display:block;font-size:10px;color:var(--text-secondary);line-height:1.7;text-align:right}
+.v18-compliance-table-heading>span{padding:5px 9px;border:1px solid var(--border);border-radius:6px;background:var(--surface-alt);font-size:11px;color:var(--text-secondary);white-space:nowrap}
+body .v18-compliance-table-wrap{border:1px solid var(--border);border-radius:10px;overflow-x:auto;background:var(--surface);outline-offset:4px}
+body .v18-compliance-table{table-layout:fixed;width:100%;min-width:850px;border-collapse:separate;border-spacing:0;border:0;overflow:hidden}
+.v18-compliance-table .v18-domain-column{width:28%}
+.v18-compliance-table .v18-status-column{width:10.285714%}
+.v18-compliance-table caption{caption-side:bottom;text-align:right;padding:10px 14px;color:var(--text-secondary);font-size:10px;line-height:1.8;background:var(--surface)}
+body .v18-compliance-table thead th{padding:14px 7px 12px;vertical-align:top;text-align:center;line-height:1.8;border:0;border-bottom:1px solid var(--border);font-size:11px;color:var(--text-primary);font-weight:600;white-space:normal;overflow-wrap:anywhere;position:relative}
+body .v18-compliance-table thead th:first-child{text-align:right;padding-inline-start:15px;background:var(--table-head);vertical-align:middle}
+.v18-compliance-table thead th>i{display:block;width:22px;height:4px;border-radius:3px;margin:0 auto 7px}
+.v18-compliance-table thead th>span{display:block;min-height:39px}
+body .v18-compliance-table thead th>small{display:block;font-size:9px;line-height:1.6;font-weight:400;color:var(--text-secondary);margin-top:3px}
+body .v18-compliance-table tbody tr[data-v13-compliance-group]>th{padding:12px 15px;text-align:right;vertical-align:middle;background:var(--surface);border:0;border-bottom:1px solid var(--border);font-weight:500;line-height:1.85;white-space:normal;overflow-wrap:anywhere}
+body .v18-compliance-table tbody tr[data-v13-compliance-group]>th>b{display:block;font-size:11px;line-height:1.85;color:var(--text-primary);font-weight:600}
+body .v18-compliance-table tbody tr[data-v13-compliance-group]>th>.v8-en{display:block;font-size:9px!important;color:var(--text-secondary);line-height:1.65;white-space:normal;overflow-wrap:anywhere;margin-top:2px;text-align:right}
+body .v18-compliance-table tbody tr[data-v13-compliance-group]>td,body .v18-compliance-table tfoot td{text-align:center;vertical-align:middle;padding:11px 7px;border:0;border-bottom:1px solid var(--border);border-inline-start:1px solid color-mix(in srgb,var(--border) 65%,transparent)}
+body .v18-compliance-table td>strong{display:inline-block;font-size:14px;font-weight:700!important;font-variant-numeric:tabular-nums;line-height:1.8;min-width:22px;text-align:center}
+body .v18-compliance-table .v18-compliance-section-row>th{padding:8px 15px;background:var(--surface-alt);border:0;border-bottom:1px solid var(--border);color:var(--text-secondary);font-size:10px;text-align:right;font-weight:600}
+.v18-compliance-section-row th>span{color:var(--text-primary);font-size:11px}
+.v18-compliance-section-row th>small{display:inline-block;margin-inline-start:10px;color:var(--text-secondary);font-size:9px;font-weight:400}
+.v18-compliance-section-row th>b{float:left;color:var(--text-secondary);font-size:10px;font-weight:500}
+body .v18-compliance-table tfoot th{padding:13px 15px;text-align:right;border:0;background:var(--table-head);color:var(--text-primary);font-size:12px}
+body .v18-compliance-table tfoot th>small{display:block;font-size:9px;line-height:1.7;color:var(--text-secondary);font-weight:400;margin-top:3px;text-align:right}
+body .v18-compliance-table tfoot td{border-bottom:0;border-top:2px solid var(--border)}
+body .v18-compliance-table tfoot td>strong{font-size:16px}
+body .v18-compliance-table [data-compliance-column="5"]{--audit-column-fill:var(--audit-good-point)}
+body .v18-compliance-table [data-compliance-column="0"]{--audit-column-fill:var(--audit-conformity)}
+body .v18-compliance-table [data-compliance-column="4"]{--audit-column-fill:var(--audit-improvement)}
+body .v18-compliance-table [data-compliance-column="3"]{--audit-column-fill:var(--audit-observation)}
+body .v18-compliance-table [data-compliance-column="1"]{--audit-column-fill:var(--audit-minor)}
+body .v18-compliance-table [data-compliance-column="2"]{--audit-column-fill:var(--audit-major)}
+body .v18-compliance-table [data-compliance-column="6"]{--audit-column-fill:var(--audit-unknown)}
+body .v10-compliance-dashboard .v18-compliance-table [data-compliance-column]{background:color-mix(in srgb,var(--audit-column-fill) 7%,var(--surface))}
+body .v18-compliance-table thead [data-compliance-column]{background:color-mix(in srgb,var(--audit-column-fill) 11%,var(--surface))}
+body .v18-compliance-table tbody tr[data-v13-compliance-group]:hover>td{background:color-mix(in srgb,var(--audit-column-fill) 13%,var(--surface))}
+body .v18-compliance-table tbody tr[data-v13-compliance-group]:hover>th{background:var(--table-hover)}
+body .v18-compliance-table tfoot [data-compliance-column]{background:color-mix(in srgb,var(--audit-column-fill) 15%,var(--surface))}
+.v18-compliance-table-note{margin:9px 0 0;color:var(--text-secondary);font-size:10px;line-height:1.8}
+@media(max-width:700px){.v18-compliance-table-heading{align-items:flex-start;gap:8px}.v18-compliance-table-heading h3{font-size:13px}.v18-compliance-table-heading>span{font-size:10px;padding:4px 6px}body .v18-compliance-table{min-width:790px}.v18-compliance-table-note{font-size:9px}}
+@media print{body .v18-compliance-table-wrap{overflow:visible;border-radius:0}body .v18-compliance-table{min-width:0;font-size:9px}body .v18-compliance-table thead th,body .v18-compliance-table tbody tr[data-v13-compliance-group]>th,body .v18-compliance-table tbody tr[data-v13-compliance-group]>td{padding:6px 4px;font-size:9px}body .v18-compliance-table [data-compliance-column]{print-color-adjust:exact;-webkit-print-color-adjust:exact}.v18-compliance-table-heading{break-after:avoid}.v18-compliance-table tr{break-inside:avoid}.v18-compliance-table-note{font-size:9px}}

@@ -25,7 +25,7 @@ test('native badges use the audit palette while preserving enum meanings and neu
 const taxonomy=JSON.parse(fs.readFileSync('src/taxonomy-v13.json','utf8'));
 const groups=taxonomy.clauses.map(g=>({...g,id:'clause:'+g.id,kind:'clause'})).concat(taxonomy.groups.map(g=>({...g,id:'annex:'+g.id,kind:'control',itemIds:g.controls})));
 const ids=groups.flatMap(g=>g.itemIds),catalog=groups.flatMap(g=>g.itemIds.map(id=>({id,kind:g.kind}))),data=Object.fromEntries([5,0,4,3,1,2].map((compliance,i)=>[ids[i],{compliance}]));data[ids[7]]={compliance:2,applicable:false};
-const ui=vm.createContext({DH:(type,props,...children)=>({type,props:props||{},children}),Ia:{Fragment:'fragment'},V13StandardGroups:()=>groups,J:catalog,V8N:v=>String(v),dcBadge:code=>({type:'badge',props:{code},children:[]}),dcNames:['Conformity','Minor','Major','Observation','Improvement','Good Point']});
+const ui=vm.createContext({DH:(type,props,...children)=>({type,props:props||{},children}),Ia:{Fragment:'fragment'},V19ComplianceSummary:()=>null,V13StandardGroups:()=>groups,J:catalog,V8N:v=>String(v),dcBadge:code=>({type:'badge',props:{code},children:[]}),dcNames:['Conformity','Minor','Major','Observation','Improvement','Good Point']});
 vm.runInContext(fs.readFileSync('src/compliance.js','utf8'),ui);
 const compiled=esbuild.transformSync(fs.readFileSync('src/dashboard-v10.jsx','utf8'),{loader:'jsx',jsxFactory:'DH',jsxFragment:'Ia.Fragment',target:'es2020'}).code;
 vm.runInContext(compiled+'\nglobalThis.View=V10ComplianceDashboard;',ui);

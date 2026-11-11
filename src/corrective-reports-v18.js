@@ -12,7 +12,7 @@ var V18CorrectiveWord=(()=>{
  const xml=value=>clean(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
  const number=value=>Number(value).toLocaleString('fa-IR',{maximumFractionDigits:2});
  const nonempty=value=>value===null||value===undefined||value===''?'ثبت نشده':String(value);
- const indicators=p=>(Array.isArray(p.indicators)?p.indicators:[]).filter(v=>typeof v==='string'&&v.trim()).map(v=>v.trim());
+ const indicators=p=>(Array.isArray(p.indicators)?p.indicators:[]).map(value=>typeof value==='string'?{title:value,reviewPeriod:'',owner:''}:value).filter(row=>row&&typeof row==='object'&&typeof row.title==='string'&&row.title.trim()).map(row=>row.title.trim()+(typeof row.reviewPeriod==='string'&&row.reviewPeriod.trim()?' — دوره بازبینی: '+row.reviewPeriod.trim():'')+(typeof row.owner==='string'&&row.owner.trim()?' — متولی اجرایی: '+row.owner.trim():''));
  const group=p=>({1:'A',2:'B',3:'C'})[p.months]||'B';
  const days=(end,start)=>Math.floor((Date.parse(end+'T12:00:00Z')-Date.parse(start+'T12:00:00Z'))/86400000);
  function select(projects,options={},today){
@@ -58,7 +58,7 @@ var V18CorrectiveWord=(()=>{
   if(!rows.length)return '';
   const columns=rows[0].length,sizes=widths||Array(columns).fill(Math.floor(9500/columns));
   const border=['top','left','bottom','right','insideH','insideV'].map(name=>'<w:'+name+' w:val="single" w:sz="4" w:color="CBD5E1"/>').join('');
-  return '<w:tbl><w:tblPr><w:bidiVisual/><w:tblW w:w="9500" w:type="dxa"/><w:tblLayout w:type="fixed"/><w:tblBorders>'+border+'</w:tblBorders><w:tblCellMar><w:top w:w="90" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:bottom w:w="90" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>'+sizes.map(width=>'<w:gridCol w:w="'+width+'"/>').join('')+'</w:tblGrid>'+rows.map((row,index)=>'<w:tr><w:trPr>'+(index===0?'<w:tblHeader/>':'')+'<w:cantSplit/></w:trPr>'+row.map((cell,k)=>'<w:tc><w:tcPr>'+(cell&&typeof cell==='object'&&cell.color?'<w:tcBorders><w:right w:val="single" w:sz="24" w:color="'+cell.color+'"/></w:tcBorders>':'')+'<w:tcW w:w="'+sizes[k]+'" w:type="dxa"/><w:vAlign w:val="center"/>'+(index===0?'<w:shd w:fill="E2E8F0"/>':'')+'</w:tcPr>'+paragraph(cell&&typeof cell==='object'?cell.text:cell,'TableText',{bold:index===0})+'</w:tc>').join('')+'</w:tr>').join('')+'</w:tbl>'+paragraph('');
+  return '<w:tbl><w:tblPr><w:bidiVisual/><w:tblW w:w="9500" w:type="dxa"/><w:tblLayout w:type="fixed"/><w:tblBorders>'+border+'</w:tblBorders><w:tblCellMar><w:top w:w="90" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:bottom w:w="90" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>'+sizes.map(width=>'<w:gridCol w:w="'+width+'"/>').join('')+'</w:tblGrid>'+rows.map((row,index)=>'<w:tr><w:trPr>'+(index===0?'<w:tblHeader/><w:cantSplit/>':'')+'</w:trPr>'+row.map((cell,k)=>'<w:tc><w:tcPr>'+(cell&&typeof cell==='object'&&cell.color?'<w:tcBorders><w:right w:val="single" w:sz="24" w:color="'+cell.color+'"/></w:tcBorders>':'')+'<w:tcW w:w="'+sizes[k]+'" w:type="dxa"/><w:vAlign w:val="center"/>'+(index===0?'<w:shd w:fill="E2E8F0"/>':'')+'</w:tcPr>'+paragraph(cell&&typeof cell==='object'?cell.text:cell,'TableText',{bold:index===0})+'</w:tc>').join('')+'</w:tr>').join('')+'</w:tbl>'+paragraph('');
  }
  const auditColors={5:'168B78',0:'4FAE66',4:'3C91CF',3:'D6A13D',1:'E87945',2:'C83E50'};
  const heading=(text,level=1)=>paragraph(text,'Heading'+level,{keep:true});

@@ -1,0 +1,16 @@
+{
+  "name": "didban-amniat-offline",
+  "version": "20.0.0",
+  "private": true,
+  "scripts": {
+    "build": "python3 build.py",
+    "test": "node tests/minimal.test.cjs && node tests/bcms-recovery.test.cjs && node tests/goodpoint.test.cjs && node tests/improvements-v12.test.cjs && node tests/native-compliance.test.cjs && node tests/taxonomy-v13.test.cjs && node tests/corrective-v13.test.cjs && node tests/implementation-v15.test.cjs && node tests/radar-v16.test.cjs && node tests/coverage-v16.test.cjs && python3 tests/annex-catalog-v17.test.py && node tests/indicators-v18.test.cjs && node tests/palette-v18.test.cjs && node tests/reports-v18.test.cjs && node tests/corrective-forms-v19.test.cjs && node tests/portfolio-v19.test.cjs && node tests/compliance-summary-v19.test.cjs && node tests/rtp-domain-v19.test.cjs && node tests/plan-report-v19.test.cjs && node tests/audit-report-v20.test.cjs"
+  },
+  "devDependencies": {
+    "@babel/generator": "^8.0.6",
+    "@babel/parser": "^8.0.7",
+    "@babel/traverse": "^8.0.7",
+    "@babel/types": "^8.0.6",
+    "esbuild": "0.28.2"
+  }
+}

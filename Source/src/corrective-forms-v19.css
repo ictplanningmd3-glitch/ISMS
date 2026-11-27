@@ -1,0 +1,23 @@
+/* V19 project plan and structured indicators; scoped to corrective forms/cards. */
+body .v12-project-form textarea[data-v19-project-goal]{min-height:230px;resize:vertical;line-height:1.95;white-space:pre-wrap;font-size:12px;padding:12px 14px}
+body .v12-project-form .v19-indicator-row{grid-template-columns:minmax(0,1.8fr) minmax(0,1fr) minmax(0,1fr) auto;gap:9px;align-items:end;padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
+body .v12-project-form .v19-indicator-row label{margin:0;gap:5px;font-size:10px;min-width:0}
+body .v12-project-form .v19-indicator-row input{font-size:11px;min-width:0;padding:9px;min-height:38px}
+body .v12-project-form .v19-indicator-row>button{min-height:38px;padding:9px 10px}
+body .v12-improvements .v19-fixed-project-card{height:400px;min-height:400px;max-height:400px;display:flex;flex-direction:column;gap:6px;overflow:hidden;box-sizing:border-box;padding:17px}
+body .v19-fixed-project-card>.project-top{flex:0 0 28px;min-height:0;max-height:28px;overflow:hidden;flex-wrap:nowrap;gap:6px}
+body .v19-fixed-project-card>.project-top .project-status{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+body .v19-fixed-project-card>h3{flex:0 0 38px;min-height:0;max-height:38px;line-height:1.55;margin:0;font-size:13px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
+body .v19-fixed-project-card>p{flex:0 0 50px;min-height:0;max-height:50px;margin:0;font-size:11px;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;white-space:pre-line;overflow-wrap:anywhere}
+body .v19-fixed-project-card>.project-meta{flex:0 0 20px;min-width:0;margin:0;overflow:hidden;white-space:nowrap;font-size:10px}
+body .v19-fixed-project-card>.project-meta>span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+body .v19-fixed-project-card>.project-dates{flex:0 0 22px;min-width:0;margin:0;overflow:hidden;white-space:nowrap;font-size:9px;flex-wrap:nowrap;line-height:1.8}
+body .v19-fixed-project-card>.v12-scope-tags{flex:0 0 32px;max-height:32px;margin:0;overflow:auto;align-content:flex-start}
+body .v19-fixed-project-card>.mapping-tags{flex:0 0 26px;max-height:26px;min-height:0;margin:0;overflow:auto;align-content:flex-start}
+body .v19-fixed-project-card>.mapping-tags button{padding:3px 6px;font-size:9px;min-height:22px}
+body .v19-fixed-project-card>.project-progress{flex:0 0 36px;margin-top:auto;min-height:0}
+body .v19-fixed-project-card>.project-progress>div:first-child{font-size:10px;margin-bottom:5px}
+body .v19-fixed-project-card>.project-edit{flex:0 0 34px;min-height:34px;max-height:34px;padding:7px 10px;margin:0;font-size:11px}
+@media(max-width:700px){body .v12-project-form .v19-indicator-row{grid-template-columns:repeat(2,minmax(0,1fr));padding:9px;gap:8px}body .v12-project-form .v19-indicator-row>label:first-child{grid-column:1/-1}body .v12-project-form .v19-indicator-row>button{grid-column:1/-1;justify-self:end;min-height:32px;padding:6px 14px}body .v12-project-form textarea[data-v19-project-goal]{min-height:220px}}
+@media(max-width:420px){body .v12-project-form .v19-indicator-row{grid-template-columns:minmax(0,1fr)}body .v12-project-form .v19-indicator-row>label,body .v12-project-form .v19-indicator-row>button{grid-column:1}}
+@media print{body .v12-improvements .v19-fixed-project-card{height:auto;min-height:0;max-height:none;break-inside:avoid}body .v19-fixed-project-card>p{max-height:none;display:block;-webkit-line-clamp:unset;flex-basis:auto}}

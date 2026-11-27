@@ -1,0 +1,1311 @@
+{
+  "version": 17,
+  "sourceFile": "ISO 27001 - 2022.pdf",
+  "sourceSha256": "843a6728009540947b2c5531f94b4cf1fb698d5bf3b51b324c8801e3e01c5b78",
+  "basis": "User-supplied ISO/IEC 27001:2022, Annex A, Table A.1. Only layout line breaks and split words normalized.",
+  "controls": [
+    {
+      "id": "A.5.1",
+      "titleEn": "Policies for information security",
+      "textEn": "Information security policy and topic-specific policies shall be defined, approved by management, published, communicated to and acknowledged by relevant personnel and relevant interested parties, and reviewed at planned intervals and if significant changes occur.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "خط‌مشی‌های امنیت اطلاعات",
+      "textFa": "خط‌مشی امنیت اطلاعات و خط‌مشی‌های موضوعی باید تعریف شوند، به تصویب مدیریت برسند، منتشر شوند، به کارکنان مرتبط و طرف‌های ذی‌نفع مرتبط ابلاغ شوند و دریافت آن‌ها از سوی این افراد و طرف‌ها تأیید شود؛ همچنین باید در فواصل زمانی برنامه‌ریزی‌شده و در صورت وقوع تغییرات عمده بازنگری شوند."
+    },
+    {
+      "id": "A.5.2",
+      "titleEn": "Information security roles and responsibilities",
+      "textEn": "Information security roles and responsibilities shall be defined and allocated according to the organization needs.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "نقش‌ها و مسئولیت‌های امنیت اطلاعات",
+      "textFa": "نقش‌ها و مسئولیت‌های امنیت اطلاعات باید متناسب با نیازهای سازمان تعریف و تخصیص داده شوند."
+    },
+    {
+      "id": "A.5.3",
+      "titleEn": "Segregation of duties",
+      "textEn": "Conflicting duties and conflicting areas of responsibility shall be segregated.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "تفکیک وظایف",
+      "textFa": "وظایف متعارض و حوزه‌های مسئولیت متعارض باید از یکدیگر تفکیک شوند."
+    },
+    {
+      "id": "A.5.4",
+      "titleEn": "Management responsibilities",
+      "textEn": "Management shall require all personnel to apply information security in accordance with the established information security policy, topic-specific policies and procedures of the organization.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "مسئولیت‌های مدیریت",
+      "textFa": "مدیریت باید تمامی کارکنان را ملزم کند که امنیت اطلاعات را مطابق با خط‌مشی امنیت اطلاعات، خط‌مشی‌های موضوعی و رویه‌های تعیین‌شدهٔ سازمان اعمال کنند."
+    },
+    {
+      "id": "A.5.5",
+      "titleEn": "Contact with authorities",
+      "textEn": "The organization shall establish and maintain contact with relevant authorities.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "ارتباط با مراجع ذی‌صلاح",
+      "textFa": "سازمان باید ارتباط با مراجع ذی‌صلاح مرتبط را برقرار و حفظ کند."
+    },
+    {
+      "id": "A.5.6",
+      "titleEn": "Contact with special interest groups",
+      "textEn": "The organization shall establish and maintain contact with special interest groups or other specialist security forums and professional associations.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "ارتباط با گروه‌های تخصصی",
+      "textFa": "سازمان باید ارتباط با گروه‌های تخصصی یا سایر مجامع تخصصی امنیت و انجمن‌های حرفه‌ای را برقرار و حفظ کند."
+    },
+    {
+      "id": "A.5.7",
+      "titleEn": "Threat intelligence",
+      "textEn": "Information relating to information security threats shall be collected and analysed to produce threat intelligence.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "هوشمندی تهدید",
+      "textFa": "اطلاعات مرتبط با تهدیدهای امنیت اطلاعات باید برای تولید هوشمندی تهدید، جمع‌آوری و تحلیل شود."
+    },
+    {
+      "id": "A.5.8",
+      "titleEn": "Information security in project management",
+      "textEn": "Information security shall be integrated into project management.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "امنیت اطلاعات در مدیریت پروژه",
+      "textFa": "امنیت اطلاعات باید در مدیریت پروژه یکپارچه شود."
+    },
+    {
+      "id": "A.5.9",
+      "titleEn": "Inventory of information and other associated assets",
+      "textEn": "An inventory of information and other associated assets, including owners, shall be developed and maintained.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "فهرست‌برداری از اطلاعات و سایر دارایی‌های مرتبط",
+      "textFa": "فهرستی از اطلاعات و سایر دارایی‌های مرتبط، شامل مالکان آن‌ها، باید تهیه و نگهداری شود."
+    },
+    {
+      "id": "A.5.10",
+      "titleEn": "Acceptable use of information and other associated assets",
+      "textEn": "Rules for the acceptable use and procedures for handling information and other associated assets shall be identified, documented and implemented.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "استفادهٔ قابل قبول از اطلاعات و سایر دارایی‌های مرتبط",
+      "textFa": "قواعد استفادهٔ قابل قبول و رویه‌های کار با اطلاعات و سایر دارایی‌های مرتبط باید شناسایی، مستند و اجرا شوند."
+    },
+    {
+      "id": "A.5.11",
+      "titleEn": "Return of assets",
+      "textEn": "Personnel and other interested parties as appropriate shall return all the organization’s assets in their possession upon change or termination of their employment, contract or agreement.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 11,
+        "pdfPage": 17
+      },
+      "titleFa": "بازگرداندن دارایی‌ها",
+      "textFa": "کارکنان و، حسب مورد، سایر طرف‌های ذی‌نفع باید هنگام تغییر یا خاتمهٔ اشتغال، قرارداد یا توافق خود، تمامی دارایی‌های سازمان را که در اختیار دارند بازگردانند."
+    },
+    {
+      "id": "A.5.12",
+      "titleEn": "Classification of information",
+      "textEn": "Information shall be classified according to the information security needs of the organization based on confidentiality, integrity, availability and relevant interested party requirements.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "طبقه‌بندی اطلاعات",
+      "textFa": "اطلاعات باید مطابق با نیازهای امنیت اطلاعات سازمان و بر مبنای محرمانگی، یکپارچگی، دسترس‌پذیری و الزامات طرف‌های ذی‌نفع مرتبط طبقه‌بندی شود."
+    },
+    {
+      "id": "A.5.13",
+      "titleEn": "Labelling of information",
+      "textEn": "An appropriate set of procedures for information labelling shall be developed and implemented in accordance with the information classification scheme adopted by the organization.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "برچسب‌گذاری اطلاعات",
+      "textFa": "مجموعه‌ای مناسب از رویه‌های برچسب‌گذاری اطلاعات باید مطابق با طرح طبقه‌بندی اطلاعاتِ پذیرفته‌شده در سازمان تدوین و اجرا شود."
+    },
+    {
+      "id": "A.5.14",
+      "titleEn": "Information transfer",
+      "textEn": "Information transfer rules, procedures, or agreements shall be in place for all types of transfer facilities within the organization and between the organization and other parties.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "انتقال اطلاعات",
+      "textFa": "قواعد، رویه‌ها یا توافق‌نامه‌های انتقال اطلاعات باید برای تمامی انواع تسهیلات انتقال در داخل سازمان و میان سازمان و سایر طرف‌ها برقرار باشند."
+    },
+    {
+      "id": "A.5.15",
+      "titleEn": "Access control",
+      "textEn": "Rules to control physical and logical access to information and other associated assets shall be established and implemented based on business and information security requirements.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "کنترل دسترسی",
+      "textFa": "قواعد کنترل دسترسی فیزیکی و منطقی به اطلاعات و سایر دارایی‌های مرتبط باید بر مبنای الزامات کسب‌وکار و امنیت اطلاعات تعیین و اجرا شوند."
+    },
+    {
+      "id": "A.5.16",
+      "titleEn": "Identity management",
+      "textEn": "The full life cycle of identities shall be managed.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "مدیریت هویت",
+      "textFa": "چرخهٔ کامل عمر هویت‌ها باید مدیریت شود."
+    },
+    {
+      "id": "A.5.17",
+      "titleEn": "Authentication information",
+      "textEn": "Allocation and management of authentication information shall be controlled by a management process, including advising personnel on appropriate handling of authentication information.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "اطلاعات احراز هویت",
+      "textFa": "تخصیص و مدیریت اطلاعات احراز هویت باید از طریق یک فرایند مدیریتی کنترل شود؛ این فرایند باید راهنمایی کارکنان دربارهٔ نحوهٔ صحیح کار با اطلاعات احراز هویت را نیز دربرگیرد."
+    },
+    {
+      "id": "A.5.18",
+      "titleEn": "Access rights",
+      "textEn": "Access rights to information and other associated assets shall be provisioned, reviewed, modified and removed in accordance with the organization’s topic-specific policy on and rules for access control.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "حقوق دسترسی",
+      "textFa": "حقوق دسترسی به اطلاعات و سایر دارایی‌های مرتبط باید مطابق با خط‌مشی موضوعی و قواعد کنترل دسترسی سازمان برقرار، بازنگری، اصلاح و حذف شوند."
+    },
+    {
+      "id": "A.5.19",
+      "titleEn": "Information security in supplier relationships",
+      "textEn": "Processes and procedures shall be defined and implemented to manage the information security risks associated with the use of supplier’s products or services.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "امنیت اطلاعات در روابط با تأمین‌کنندگان",
+      "textFa": "فرایندها و رویه‌هایی باید برای مدیریت ریسک‌های امنیت اطلاعات مرتبط با استفاده از محصولات یا خدمات تأمین‌کننده تعریف و اجرا شوند."
+    },
+    {
+      "id": "A.5.20",
+      "titleEn": "Addressing information security within supplier agreements",
+      "textEn": "Relevant information security requirements shall be established and agreed with each supplier based on the type of supplier relationship.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "پرداختن به امنیت اطلاعات در توافق‌نامه‌های تأمین‌کنندگان",
+      "textFa": "الزامات مرتبط امنیت اطلاعات باید بر مبنای نوع رابطه با تأمین‌کننده تعیین شوند و با هر تأمین‌کننده بر سر آن‌ها توافق شود."
+    },
+    {
+      "id": "A.5.21",
+      "titleEn": "Managing information security in the information and communication technology (ICT) supply chain",
+      "textEn": "Processes and procedures shall be defined and implemented to manage the information security risks associated with the ICT products and services supply chain.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "مدیریت امنیت اطلاعات در زنجیرهٔ تأمین فناوری اطلاعات و ارتباطات (ICT)",
+      "textFa": "فرایندها و رویه‌هایی باید برای مدیریت ریسک‌های امنیت اطلاعات مرتبط با زنجیرهٔ تأمین محصولات و خدمات فناوری اطلاعات و ارتباطات تعریف و اجرا شوند."
+    },
+    {
+      "id": "A.5.22",
+      "titleEn": "Monitoring, review and change management of supplier services",
+      "textEn": "The organization shall regularly monitor, review, evaluate and manage change in supplier information security practices and service delivery.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "پایش، بازنگری و مدیریت تغییر خدمات تأمین‌کنندگان",
+      "textFa": "سازمان باید به‌طور منظم اقدامات امنیت اطلاعات و ارائهٔ خدمات تأمین‌کنندگان را پایش، بازنگری و ارزیابی کند و تغییرات آن‌ها را مدیریت کند."
+    },
+    {
+      "id": "A.5.23",
+      "titleEn": "Information security for use of cloud services",
+      "textEn": "Processes for acquisition, use, management and exit from cloud services shall be established in accordance with the organization’s information security requirements.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "امنیت اطلاعات در استفاده از خدمات ابری",
+      "textFa": "فرایندهای تهیه، استفاده، مدیریت و خروج از خدمات ابری باید مطابق با الزامات امنیت اطلاعات سازمان برقرار شوند."
+    },
+    {
+      "id": "A.5.24",
+      "titleEn": "Information security incident management planning and preparation",
+      "textEn": "The organization shall plan and prepare for managing information security incidents by defining, establishing and communicating information security incident management processes, roles and responsibilities.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 12,
+        "pdfPage": 18
+      },
+      "titleFa": "برنامه‌ریزی و آماده‌سازی مدیریت رخدادهای امنیت اطلاعات",
+      "textFa": "سازمان باید با تعریف، ایجاد و ابلاغ فرایندها، نقش‌ها و مسئولیت‌های مدیریت رخدادهای امنیت اطلاعات، برای مدیریت این رخدادها برنامه‌ریزی و آماده‌سازی کند."
+    },
+    {
+      "id": "A.5.25",
+      "titleEn": "Assessment and decision on information security events",
+      "textEn": "The organization shall assess information security events and decide if they are to be categorized as information security incidents.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "ارزیابی و تصمیم‌گیری دربارهٔ رویدادهای امنیت اطلاعات",
+      "textFa": "سازمان باید رویدادهای امنیت اطلاعات را ارزیابی کند و دربارهٔ طبقه‌بندی آن‌ها به‌عنوان رخداد امنیت اطلاعات تصمیم بگیرد."
+    },
+    {
+      "id": "A.5.26",
+      "titleEn": "Response to information security incidents",
+      "textEn": "Information security incidents shall be responded to in accordance with the documented procedures.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "پاسخ به رخدادهای امنیت اطلاعات",
+      "textFa": "پاسخ به رخدادهای امنیت اطلاعات باید مطابق با رویه‌های مدون انجام شود."
+    },
+    {
+      "id": "A.5.27",
+      "titleEn": "Learning from information security incidents",
+      "textEn": "Knowledge gained from information security incidents shall be used to strengthen and improve the information security controls.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "یادگیری از رخدادهای امنیت اطلاعات",
+      "textFa": "دانش حاصل از رخدادهای امنیت اطلاعات باید برای تقویت و بهبود کنترل‌های امنیت اطلاعات به کار گرفته شود."
+    },
+    {
+      "id": "A.5.28",
+      "titleEn": "Collection of evidence",
+      "textEn": "The organization shall establish and implement procedures for the identification, collection, acquisition and preservation of evidence related to information security events.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "جمع‌آوری شواهد",
+      "textFa": "سازمان باید رویه‌هایی را برای شناسایی، جمع‌آوری، تحصیل و نگهداری شواهد مرتبط با رویدادهای امنیت اطلاعات تعیین و اجرا کند."
+    },
+    {
+      "id": "A.5.29",
+      "titleEn": "Information security during disruption",
+      "textEn": "The organization shall plan how to maintain information security at an appropriate level during disruption.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "امنیت اطلاعات هنگام اختلال",
+      "textFa": "سازمان باید برای چگونگی حفظ امنیت اطلاعات در سطحی مناسب هنگام اختلال برنامه‌ریزی کند."
+    },
+    {
+      "id": "A.5.30",
+      "titleEn": "ICT readiness for business continuity",
+      "textEn": "ICT readiness shall be planned, implemented, maintained and tested based on business continuity objectives and ICT continuity requirements.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "آمادگی فناوری اطلاعات و ارتباطات برای تداوم کسب‌وکار",
+      "textFa": "آمادگی فناوری اطلاعات و ارتباطات باید بر مبنای اهداف تداوم کسب‌وکار و الزامات تداوم فناوری اطلاعات و ارتباطات برنامه‌ریزی، اجرا، نگهداری و آزمون شود."
+    },
+    {
+      "id": "A.5.31",
+      "titleEn": "Legal, statutory, regulatory and contractual requirements",
+      "textEn": "Legal, statutory, regulatory and contractual requirements relevant to information security and the organization’s approach to meet these requirements shall be identified, documented and kept up to date.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "الزامات حقوقی، قانونی، مقرراتی و قراردادی",
+      "textFa": "الزامات حقوقی، قانونی، مقرراتی و قراردادی مرتبط با امنیت اطلاعات و رویکرد سازمان برای برآورده‌سازی این الزامات باید شناسایی، مستند و به‌روز نگه داشته شوند."
+    },
+    {
+      "id": "A.5.32",
+      "titleEn": "Intellectual property rights",
+      "textEn": "The organization shall implement appropriate procedures to protect intellectual property rights.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "حقوق مالکیت فکری",
+      "textFa": "سازمان باید رویه‌های مناسبی را برای حفاظت از حقوق مالکیت فکری اجرا کند."
+    },
+    {
+      "id": "A.5.33",
+      "titleEn": "Protection of records",
+      "textEn": "Records shall be protected from loss, destruction, falsification, unauthorized access and unauthorized release.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "حفاظت از سوابق",
+      "textFa": "سوابق باید در برابر از دست رفتن، تخریب، جعل، دسترسی غیرمجاز و افشای غیرمجاز حفاظت شوند."
+    },
+    {
+      "id": "A.5.34",
+      "titleEn": "Privacy and protection of personal identifiable information (PII)",
+      "textEn": "The organization shall identify and meet the requirements regarding the preservation of privacy and protection of PII according to applicable laws and regulations and contractual requirements.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "حریم خصوصی و حفاظت از اطلاعات شناسایی‌پذیر شخصی (PII)",
+      "textFa": "سازمان باید الزامات مربوط به حفظ حریم خصوصی و حفاظت از اطلاعات شناسایی‌پذیر شخصی (PII) را مطابق با قوانین و مقررات قابل اعمال و الزامات قراردادی شناسایی و برآورده کند."
+    },
+    {
+      "id": "A.5.35",
+      "titleEn": "Independent review of information security",
+      "textEn": "The organization’s approach to managing information security and its implementation including people, processes and technologies shall be reviewed independently at planned intervals, or when significant changes occur.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "بازنگری مستقل امنیت اطلاعات",
+      "textFa": "رویکرد سازمان برای مدیریت امنیت اطلاعات و پیاده‌سازی آن، شامل افراد، فرایندها و فناوری‌ها، باید در فواصل زمانی برنامه‌ریزی‌شده یا هنگام وقوع تغییرات عمده، به‌صورت مستقل بازنگری شود."
+    },
+    {
+      "id": "A.5.36",
+      "titleEn": "Compliance with policies, rules and standards for information security",
+      "textEn": "Compliance with the organization’s information security policy, topic-specific policies, rules and standards shall be regularly reviewed.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "رعایت خط‌مشی‌ها، قواعد و استانداردهای امنیت اطلاعات",
+      "textFa": "رعایت خط‌مشی امنیت اطلاعات، خط‌مشی‌های موضوعی، قواعد و استانداردهای سازمان باید به‌طور منظم بازنگری شود."
+    },
+    {
+      "id": "A.5.37",
+      "titleEn": "Documented operating procedures",
+      "textEn": "Operating procedures for information processing facilities shall be documented and made available to personnel who need them.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 13,
+        "pdfPage": 19
+      },
+      "titleFa": "رویه‌های عملیاتی مدون",
+      "textFa": "رویه‌های عملیاتی تسهیلات پردازش اطلاعات باید مستند شوند و در دسترس کارکنانی که به آن‌ها نیاز دارند قرار گیرند."
+    },
+    {
+      "id": "A.6.1",
+      "titleEn": "Screening",
+      "textEn": "Background verification checks on all candidates to become personnel shall be carried out prior to joining the organization and on an ongoing basis taking into consideration applicable laws, regulations and ethics and be proportional to the business requirements, the classification of the information to be accessed and the perceived risks.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "بررسی پیشینه",
+      "textFa": "بررسی‌های صحت‌سنجی پیشینهٔ تمامی داوطلبان به‌کارگیری به‌عنوان کارکنان باید پیش از پیوستن به سازمان و به‌طور مستمر، با در نظر گرفتن قوانین و مقررات قابل اعمال و ملاحظات اخلاقی انجام شوند و متناسب با الزامات کسب‌وکار، طبقه‌بندی اطلاعاتی که قرار است در دسترس آنان قرار گیرد و ریسک‌های درک‌شده باشند."
+    },
+    {
+      "id": "A.6.2",
+      "titleEn": "Terms and conditions of employment",
+      "textEn": "The employment contractual agreements shall state the personnel’s and the organization’s responsibilities for information security.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "شرایط و ضوابط استخدام",
+      "textFa": "توافق‌نامه‌های قراردادی استخدام باید مسئولیت‌های کارکنان و سازمان در قبال امنیت اطلاعات را بیان کنند."
+    },
+    {
+      "id": "A.6.3",
+      "titleEn": "Information security awareness, education and training",
+      "textEn": "Personnel of the organization and relevant interested parties shall receive appropriate information security awareness, education and training and regular updates of the organization's information security policy, topic-specific policies and procedures, as relevant for their job function.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "آگاهی‌رسانی، آموزش و مهارت‌آموزی امنیت اطلاعات",
+      "textFa": "کارکنان سازمان و طرف‌های ذی‌نفع مرتبط باید آگاهی‌رسانی، آموزش و مهارت‌آموزی مناسب در زمینهٔ امنیت اطلاعات و به‌روزرسانی‌های منظم خط‌مشی امنیت اطلاعات، خط‌مشی‌های موضوعی و رویه‌های سازمان را، متناسب با وظایف شغلی خود، دریافت کنند."
+    },
+    {
+      "id": "A.6.4",
+      "titleEn": "Disciplinary process",
+      "textEn": "A disciplinary process shall be formalized and communicated to take actions against personnel and other relevant interested parties who have committed an information security policy violation.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "فرایند انضباطی",
+      "textFa": "یک فرایند انضباطی باید رسمیت یابد و اطلاع‌رسانی شود تا در قبال کارکنان و سایر طرف‌های ذی‌نفع مرتبط که مرتکب نقض خط‌مشی امنیت اطلاعات شده‌اند، اقدام شود."
+    },
+    {
+      "id": "A.6.5",
+      "titleEn": "Responsibilities after termination or change of employment",
+      "textEn": "Information security responsibilities and duties that remain valid after termination or change of employment shall be defined, enforced and communicated to relevant personnel and other interested parties.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "مسئولیت‌ها پس از خاتمه یا تغییر وضعیت استخدام",
+      "textFa": "مسئولیت‌ها و وظایف امنیت اطلاعات که پس از خاتمه یا تغییر وضعیت استخدام همچنان معتبر می‌مانند، باید تعریف و اعمال شوند و به کارکنان مرتبط و سایر طرف‌های ذی‌نفع اطلاع‌رسانی شوند."
+    },
+    {
+      "id": "A.6.6",
+      "titleEn": "Confidentiality or non-disclosure agreements",
+      "textEn": "Confidentiality or non-disclosure agreements reflecting the organization’s needs for the protection of information shall be identified, documented, regularly reviewed and signed by personnel and other relevant interested parties.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "توافق‌نامه‌های محرمانگی یا عدم افشا",
+      "textFa": "توافق‌نامه‌های محرمانگی یا عدم افشا که منعکس‌کنندهٔ نیازهای سازمان برای حفاظت از اطلاعات هستند، باید شناسایی و مدون شوند، به‌طور منظم بازنگری شوند و به امضای کارکنان و سایر طرف‌های ذی‌نفع مرتبط برسند."
+    },
+    {
+      "id": "A.6.7",
+      "titleEn": "Remote working",
+      "textEn": "Security measures shall be implemented when personnel are working remotely to protect information accessed, processed or stored outside the organization’s premises.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "دورکاری",
+      "textFa": "هنگام دورکاری کارکنان، باید تدابیر امنیتی برای حفاظت از اطلاعاتی که دسترسی به آنها، پردازش یا ذخیره‌سازی آنها در خارج از محل سازمان انجام می‌شود، پیاده‌سازی شوند."
+    },
+    {
+      "id": "A.6.8",
+      "titleEn": "Information security event reporting",
+      "textEn": "The organization shall provide a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "گزارش‌دهی رویدادهای امنیت اطلاعات",
+      "textFa": "سازمان باید سازوکاری در اختیار کارکنان قرار دهد تا رویدادهای امنیت اطلاعات مشاهده‌شده یا مشکوک را به‌موقع و از طریق مجاری مناسب گزارش کنند."
+    },
+    {
+      "id": "A.7.1",
+      "titleEn": "Physical security perimeters",
+      "textEn": "Security perimeters shall be defined and used to protect areas that contain information and other associated assets.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "حریم‌های امنیت فیزیکی",
+      "textFa": "حریم‌های امنیتی باید برای حفاظت از نواحی حاوی اطلاعات و سایر دارایی‌های مرتبط، تعریف و به‌کار گرفته شوند."
+    },
+    {
+      "id": "A.7.2",
+      "titleEn": "Physical entry",
+      "textEn": "Secure areas shall be protected by appropriate entry controls and access points.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "ورود فیزیکی",
+      "textFa": "نواحی امن باید با کنترل‌های ورود و نقاط دسترسی مناسب حفاظت شوند."
+    },
+    {
+      "id": "A.7.3",
+      "titleEn": "Securing offices, rooms and facilities",
+      "textEn": "Physical security for offices, rooms and facilities shall be designed and implemented.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "ایمن‌سازی دفاتر، اتاق‌ها و تسهیلات",
+      "textFa": "امنیت فیزیکی دفاتر، اتاق‌ها و تسهیلات باید طراحی و پیاده‌سازی شود."
+    },
+    {
+      "id": "A.7.4",
+      "titleEn": "Physical security monitoring",
+      "textEn": "Premises shall be continuously monitored for unauthorized physical access.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 14,
+        "pdfPage": 20
+      },
+      "titleFa": "پایش امنیت فیزیکی",
+      "textFa": "اماکن باید به‌طور مستمر از نظر دسترسی فیزیکی غیرمجاز پایش شوند."
+    },
+    {
+      "id": "A.7.5",
+      "titleEn": "Protecting against physical and environmental threats",
+      "textEn": "Protection against physical and environmental threats, such as natural disasters and other intentional or unintentional physical threats to infrastructure shall be designed and implemented.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "حفاظت در برابر تهدیدهای فیزیکی و محیطی",
+      "textFa": "حفاظت در برابر تهدیدهای فیزیکی و محیطی، از جمله بلایای طبیعی و سایر تهدیدهای فیزیکی عمدی یا غیرعمدی علیه زیرساخت، باید طراحی و پیاده‌سازی شود."
+    },
+    {
+      "id": "A.7.6",
+      "titleEn": "Working in secure areas",
+      "textEn": "Security measures for working in secure areas shall be designed and implemented.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "کار در نواحی امن",
+      "textFa": "تدابیر امنیتی برای کار در نواحی امن باید طراحی و پیاده‌سازی شوند."
+    },
+    {
+      "id": "A.7.7",
+      "titleEn": "Clear desk and clear screen",
+      "textEn": "Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities shall be defined and appropriately enforced.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "میز پاک و صفحه‌نمایش پاک",
+      "textFa": "مقررات میز پاک برای اوراق کاغذی و رسانه‌های ذخیره‌سازی جداشدنی، و مقررات صفحه‌نمایش پاک برای تسهیلات پردازش اطلاعات، باید تعریف و به‌نحو مناسب اعمال شوند."
+    },
+    {
+      "id": "A.7.8",
+      "titleEn": "Equipment siting and protection",
+      "textEn": "Equipment shall be sited securely and protected.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "جانمایی و حفاظت تجهیزات",
+      "textFa": "تجهیزات باید به‌صورت امن جانمایی و حفاظت شوند."
+    },
+    {
+      "id": "A.7.9",
+      "titleEn": "Security of assets off-premises",
+      "textEn": "Off-site assets shall be protected.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "امنیت دارایی‌های خارج از محل سازمان",
+      "textFa": "دارایی‌های خارج از محل سازمان باید حفاظت شوند."
+    },
+    {
+      "id": "A.7.10",
+      "titleEn": "Storage media",
+      "textEn": "Storage media shall be managed through their life cycle of acquisition, use, transportation and disposal in accordance with the organization’s classification scheme and handling requirements.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "رسانه‌های ذخیره‌سازی",
+      "textFa": "رسانه‌های ذخیره‌سازی باید در سراسر چرخهٔ عمر خود، شامل تهیه، استفاده، حمل‌ونقل و دفع، مطابق با طرح طبقه‌بندی سازمان و الزامات کار با این رسانه‌ها مدیریت شوند."
+    },
+    {
+      "id": "A.7.11",
+      "titleEn": "Supporting utilities",
+      "textEn": "Information processing facilities shall be protected from power failures and other disruptions caused by failures in supporting utilities.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "خدمات پشتیبان",
+      "textFa": "تسهیلات پردازش اطلاعات باید در برابر خرابی‌های تأمین برق و سایر اختلالات ناشی از خرابی خدمات پشتیبان حفاظت شوند."
+    },
+    {
+      "id": "A.7.12",
+      "titleEn": "Cabling security",
+      "textEn": "Cables carrying power, data or supporting information services shall be protected from interception, interference or damage.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "امنیت کابل‌کشی",
+      "textFa": "کابل‌هایی که برق یا داده را منتقل می‌کنند یا از خدمات اطلاعاتی پشتیبانی می‌کنند، باید در برابر شنود، تداخل یا آسیب حفاظت شوند."
+    },
+    {
+      "id": "A.7.13",
+      "titleEn": "Equipment maintenance",
+      "textEn": "Equipment shall be maintained correctly to ensure availability, integrity and confidentiality of information.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "نگهداری تجهیزات",
+      "textFa": "تجهیزات باید به‌درستی نگهداری شوند تا دسترس‌پذیری، یکپارچگی و محرمانگی اطلاعات تأمین شود."
+    },
+    {
+      "id": "A.7.14",
+      "titleEn": "Secure disposal or re-use of equipment",
+      "textEn": "Items of equipment containing storage media shall be verified to ensure that any sensitive data and licensed software has been removed or securely overwritten prior to disposal or re-use.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "دفع امن یا استفادهٔ مجدد از تجهیزات",
+      "textFa": "اقلام تجهیزاتی که حاوی رسانه‌های ذخیره‌سازی هستند، باید بررسی شوند تا اطمینان حاصل شود که پیش از دفع یا استفادهٔ مجدد، هرگونه دادهٔ حساس و نرم‌افزار دارای مجوز از آنها حذف شده یا به‌طور امن بازنویسی شده است."
+    },
+    {
+      "id": "A.8.1",
+      "titleEn": "User end point devices",
+      "textEn": "Information stored on, processed by or accessible via user end point devices shall be protected.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "تجهیزات نقطهٔ پایانی کاربر",
+      "textFa": "اطلاعاتی که در تجهیزات نقطهٔ پایانی کاربر ذخیره می‌شوند، توسط آنها پردازش می‌شوند یا از طریق آنها قابل دسترسی هستند، باید حفاظت شوند."
+    },
+    {
+      "id": "A.8.2",
+      "titleEn": "Privileged access rights",
+      "textEn": "The allocation and use of privileged access rights shall be restricted and managed.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "حقوق دسترسی دارای امتیاز ویژه",
+      "textFa": "تخصیص و استفاده از حقوق دسترسی دارای امتیاز ویژه باید محدود و مدیریت شود."
+    },
+    {
+      "id": "A.8.3",
+      "titleEn": "Information access restriction",
+      "textEn": "Access to information and other associated assets shall be restricted in accordance with the established topic-specific policy on access control.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "محدودسازی دسترسی به اطلاعات",
+      "textFa": "دسترسی به اطلاعات و سایر دارایی‌های مرتبط باید مطابق خط‌مشی موضوعیِ برقرارشده برای کنترل دسترسی محدود شود."
+    },
+    {
+      "id": "A.8.4",
+      "titleEn": "Access to source code",
+      "textEn": "Read and write access to source code, development tools and software libraries shall be appropriately managed.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 15,
+        "pdfPage": 21
+      },
+      "titleFa": "دسترسی به کد منبع",
+      "textFa": "دسترسی خواندن و نوشتن به کد منبع، ابزارهای توسعه و کتابخانه‌های نرم‌افزاری باید به‌نحو مقتضی مدیریت شود."
+    },
+    {
+      "id": "A.8.5",
+      "titleEn": "Secure authentication",
+      "textEn": "Secure authentication technologies and procedures shall be implemented based on information access restrictions and the topic-specific policy on access control.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "احراز هویت امن",
+      "textFa": "فناوری‌ها و رویه‌های احراز هویت امن باید بر مبنای محدودیت‌های دسترسی به اطلاعات و خط‌مشی موضوعی کنترل دسترسی پیاده‌سازی شوند."
+    },
+    {
+      "id": "A.8.6",
+      "titleEn": "Capacity management",
+      "textEn": "The use of resources shall be monitored and adjusted in line with current and expected capacity requirements.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "مدیریت ظرفیت",
+      "textFa": "استفاده از منابع باید متناسب با نیازمندی‌های فعلی و مورد انتظارِ ظرفیت، پایش و تنظیم شود."
+    },
+    {
+      "id": "A.8.7",
+      "titleEn": "Protection against malware",
+      "textEn": "Protection against malware shall be implemented and supported by appropriate user awareness.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "حفاظت در برابر بدافزار",
+      "textFa": "حفاظت در برابر بدافزار باید پیاده‌سازی شود و با آگاهی‌بخشی مناسب به کاربران پشتیبانی شود."
+    },
+    {
+      "id": "A.8.8",
+      "titleEn": "Management of technical vulnerabilities",
+      "textEn": "Information about technical vulnerabilities of information systems in use shall be obtained, the organization’s exposure to such vulnerabilities shall be evaluated and appropriate measures shall be taken.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "مدیریت آسیب‌پذیری‌های فنی",
+      "textFa": "اطلاعات مربوط به آسیب‌پذیری‌های فنی سامانه‌های اطلاعاتیِ مورد استفاده باید به دست آید، میزان مواجههٔ سازمان با این آسیب‌پذیری‌ها باید ارزیابی شود و اقدامات مقتضی باید انجام شوند."
+    },
+    {
+      "id": "A.8.9",
+      "titleEn": "Configuration management",
+      "textEn": "Configurations, including security configurations, of hardware, software, services and networks shall be established, documented, implemented, monitored and reviewed.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "مدیریت پیکربندی",
+      "textFa": "پیکربندی‌های سخت‌افزار، نرم‌افزار، خدمات و شبکه‌ها، از جمله پیکربندی‌های امنیتی، باید برقرار، مستند، پیاده‌سازی، پایش و بازنگری شوند."
+    },
+    {
+      "id": "A.8.10",
+      "titleEn": "Information deletion",
+      "textEn": "Information stored in information systems, devices or in any other storage media shall be deleted when no longer required.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "حذف اطلاعات",
+      "textFa": "اطلاعات ذخیره‌شده در سامانه‌های اطلاعاتی، تجهیزات یا هرگونه رسانهٔ ذخیره‌سازی دیگر باید هنگامی که دیگر مورد نیاز نیستند، حذف شوند."
+    },
+    {
+      "id": "A.8.11",
+      "titleEn": "Data masking",
+      "textEn": "Data masking shall be used in accordance with the organization’s topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "پوشان‌سازی داده‌ها",
+      "textFa": "پوشان‌سازی داده‌ها باید مطابق خط‌مشی موضوعی سازمان در زمینهٔ کنترل دسترسی، سایر خط‌مشی‌های موضوعی مرتبط و نیازمندی‌های کسب‌وکار، با در نظر گرفتن قوانین قابل اعمال، به کار گرفته شود."
+    },
+    {
+      "id": "A.8.12",
+      "titleEn": "Data leakage prevention",
+      "textEn": "Data leakage prevention measures shall be applied to systems, networks and any other devices that process, store or transmit sensitive information.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "پیشگیری از نشت داده‌ها",
+      "textFa": "تمهیدات پیشگیری از نشت داده‌ها باید در سامانه‌ها، شبکه‌ها و هرگونه تجهیزات دیگری که اطلاعات حساس را پردازش، ذخیره یا منتقل می‌کنند، اعمال شوند."
+    },
+    {
+      "id": "A.8.13",
+      "titleEn": "Information backup",
+      "textEn": "Backup copies of information, software and systems shall be maintained and regularly tested in accordance with the agreed topic-specific policy on backup.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "پشتیبان‌گیری از اطلاعات",
+      "textFa": "نسخه‌های پشتیبان اطلاعات، نرم‌افزار و سامانه‌ها باید مطابق خط‌مشی موضوعیِ مورد توافق در زمینهٔ پشتیبان‌گیری نگهداری و به‌طور منظم آزمون شوند."
+    },
+    {
+      "id": "A.8.14",
+      "titleEn": "Redundancy of information processing facilities",
+      "textEn": "Information processing facilities shall be implemented with redundancy sufficient to meet availability requirements.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "افزونگی تسهیلات پردازش اطلاعات",
+      "textFa": "تسهیلات پردازش اطلاعات باید با افزونگی کافی برای برآورده‌سازی نیازمندی‌های دسترس‌پذیری پیاده‌سازی شوند."
+    },
+    {
+      "id": "A.8.15",
+      "titleEn": "Logging",
+      "textEn": "Logs that record activities, exceptions, faults and other relevant events shall be produced, stored, protected and analysed.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "ثبت وقایع",
+      "textFa": "سوابق وقایعی که فعالیت‌ها، استثناها، خطاها و سایر رویدادهای مرتبط را ثبت می‌کنند، باید تولید، ذخیره، حفاظت و تحلیل شوند."
+    },
+    {
+      "id": "A.8.16",
+      "titleEn": "Monitoring activities",
+      "textEn": "Networks, systems and applications shall be monitored for anomalous behaviour and appropriate actions taken to evaluate potential information security incidents.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "فعالیت‌های پایش",
+      "textFa": "شبکه‌ها، سامانه‌ها و برنامه‌های کاربردی باید از نظر رفتار غیرعادی پایش شوند و اقدامات مقتضی برای ارزیابی رخدادهای بالقوهٔ امنیت اطلاعات انجام شود."
+    },
+    {
+      "id": "A.8.17",
+      "titleEn": "Clock synchronization",
+      "textEn": "The clocks of information processing systems used by the organization shall be synchronized to approved time sources.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 16,
+        "pdfPage": 22
+      },
+      "titleFa": "همگام‌سازی ساعت‌ها",
+      "textFa": "ساعت‌های سامانه‌های پردازش اطلاعاتِ مورد استفادهٔ سازمان باید با منابع زمانیِ تأییدشده همگام‌سازی شوند."
+    },
+    {
+      "id": "A.8.18",
+      "titleEn": "Use of privileged utility programs",
+      "textEn": "The use of utility programs that can be capable of overriding system and application controls shall be restricted and tightly controlled.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "استفاده از برنامه‌های کمکی دارای امتیاز ویژه",
+      "textFa": "استفاده از برنامه‌های کمکی که می‌توانند کنترل‌های سامانه و برنامه‌های کاربردی را دور بزنند، باید محدود و به‌شدت کنترل شود."
+    },
+    {
+      "id": "A.8.19",
+      "titleEn": "Installation of software on operational systems",
+      "textEn": "Procedures and measures shall be implemented to securely manage software installation on operational systems.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "نصب نرم‌افزار بر سامانه‌های عملیاتی",
+      "textFa": "رویه‌ها و تمهیداتی باید برای مدیریت امن نصب نرم‌افزار بر سامانه‌های عملیاتی پیاده‌سازی شوند."
+    },
+    {
+      "id": "A.8.20",
+      "titleEn": "Networks security",
+      "textEn": "Networks and network devices shall be secured, managed and controlled to protect information in systems and applications.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "امنیت شبکه‌ها",
+      "textFa": "شبکه‌ها و تجهیزات شبکه باید برای حفاظت از اطلاعات در سامانه‌ها و برنامه‌های کاربردی، امن‌سازی، مدیریت و کنترل شوند."
+    },
+    {
+      "id": "A.8.21",
+      "titleEn": "Security of network services",
+      "textEn": "Security mechanisms, service levels and service requirements of network services shall be identified, implemented and monitored.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "امنیت خدمات شبکه",
+      "textFa": "سازوکارهای امنیتی، سطوح خدمت و نیازمندی‌های خدمات شبکه باید شناسایی، پیاده‌سازی و پایش شوند."
+    },
+    {
+      "id": "A.8.22",
+      "titleEn": "Segregation of networks",
+      "textEn": "Groups of information services, users and information systems shall be segregated in the organization’s networks.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "تفکیک شبکه‌ها",
+      "textFa": "گروه‌های خدمات اطلاعاتی، کاربران و سامانه‌های اطلاعاتی باید در شبکه‌های سازمان از یکدیگر تفکیک شوند."
+    },
+    {
+      "id": "A.8.23",
+      "titleEn": "Web filtering",
+      "textEn": "Access to external websites shall be managed to reduce exposure to malicious content.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "پالایش وب",
+      "textFa": "دسترسی به وب‌سایت‌های خارجی باید به‌منظور کاهش مواجهه با محتوای مخرب مدیریت شود."
+    },
+    {
+      "id": "A.8.24",
+      "titleEn": "Use of cryptography",
+      "textEn": "Rules for the effective use of cryptography, including cryptographic key management, shall be defined and implemented.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "استفاده از رمزنگاری",
+      "textFa": "قواعد استفادهٔ اثربخش از رمزنگاری، شامل مدیریت کلیدهای رمزنگاری، باید تعریف و پیاده‌سازی شوند."
+    },
+    {
+      "id": "A.8.25",
+      "titleEn": "Secure development life cycle",
+      "textEn": "Rules for the secure development of software and systems shall be established and applied.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "چرخهٔ عمر توسعهٔ امن",
+      "textFa": "قواعد توسعهٔ امن نرم‌افزار و سامانه‌ها باید برقرار و اعمال شوند."
+    },
+    {
+      "id": "A.8.26",
+      "titleEn": "Application security requirements",
+      "textEn": "Information security requirements shall be identified, specified and approved when developing or acquiring applications.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "نیازمندی‌های امنیتی برنامه‌های کاربردی",
+      "textFa": "نیازمندی‌های امنیت اطلاعات باید هنگام توسعه یا تهیهٔ برنامه‌های کاربردی، شناسایی، مشخص و تأیید شوند."
+    },
+    {
+      "id": "A.8.27",
+      "titleEn": "Secure system architecture and engineering principles",
+      "textEn": "Principles for engineering secure systems shall be established, documented, maintained and applied to any information system development activities.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "معماری امن سامانه و اصول مهندسی",
+      "textFa": "اصول مهندسی سامانه‌های امن باید برقرار، مستند و نگهداری شوند و در هرگونه فعالیت توسعهٔ سامانهٔ اطلاعاتی به کار گرفته شوند."
+    },
+    {
+      "id": "A.8.28",
+      "titleEn": "Secure coding",
+      "textEn": "Secure coding principles shall be applied to software development.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "کدنویسی امن",
+      "textFa": "اصول کدنویسی امن باید در توسعهٔ نرم‌افزار به کار گرفته شوند."
+    },
+    {
+      "id": "A.8.29",
+      "titleEn": "Security testing in development and acceptance",
+      "textEn": "Security testing processes shall be defined and implemented in the development life cycle.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "آزمون امنیت در توسعه و پذیرش",
+      "textFa": "فرایندهای آزمون امنیت باید در چرخهٔ عمر توسعه تعریف و پیاده‌سازی شوند."
+    },
+    {
+      "id": "A.8.30",
+      "titleEn": "Outsourced development",
+      "textEn": "The organization shall direct, monitor and review the activities related to outsourced system development.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "توسعهٔ برون‌سپاری‌شده",
+      "textFa": "سازمان باید فعالیت‌های مرتبط با توسعهٔ برون‌سپاری‌شدهٔ سامانه را هدایت، پایش و بازنگری کند."
+    },
+    {
+      "id": "A.8.31",
+      "titleEn": "Separation of development, test and production environments",
+      "textEn": "Development, testing and production environments shall be separated and secured.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "جداسازی محیط‌های توسعه، آزمون و عملیاتی",
+      "textFa": "محیط‌های توسعه، آزمون و عملیاتی باید از یکدیگر جدا و امن‌سازی شوند."
+    },
+    {
+      "id": "A.8.32",
+      "titleEn": "Change management",
+      "textEn": "Changes to information processing facilities and information systems shall be subject to change management procedures.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "مدیریت تغییر",
+      "textFa": "تغییرات در تسهیلات پردازش اطلاعات و سامانه‌های اطلاعاتی باید تابع رویه‌های مدیریت تغییر باشند."
+    },
+    {
+      "id": "A.8.33",
+      "titleEn": "Test information",
+      "textEn": "Test information shall be appropriately selected, protected and managed.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 17,
+        "pdfPage": 23
+      },
+      "titleFa": "اطلاعات آزمون",
+      "textFa": "اطلاعات آزمون باید به‌نحو مقتضی انتخاب، حفاظت و مدیریت شوند."
+    },
+    {
+      "id": "A.8.34",
+      "titleEn": "Protection of information systems during audit testing",
+      "textEn": "Audit tests and other assurance activities involving assessment of operational systems shall be planned and agreed between the tester and appropriate management.",
+      "source": {
+        "standard": "ISO/IEC 27001:2022",
+        "annex": "A",
+        "table": "A.1",
+        "printedPage": 18,
+        "pdfPage": 24
+      },
+      "titleFa": "حفاظت از سامانه‌های اطلاعاتی در حین آزمون ممیزی",
+      "textFa": "آزمون‌های ممیزی و سایر فعالیت‌های اطمینان‌بخشی که شامل ارزیابی سامانه‌های عملیاتی هستند، باید بین آزمون‌کننده و مدیریت ذی‌ربط برنامه‌ریزی و مورد توافق قرار گیرند."
+    }
+  ],
+  "translation": "Technical Persian translation prepared for audit use; not an official ISO translation."
+}

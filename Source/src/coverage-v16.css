@@ -1,0 +1,48 @@
+/* Only the corrective-action dashboard gains the coverage KPI and traceable chart. */
+.v14-action-dashboard .v13-gap-kpis{grid-template-columns:repeat(5,minmax(0,1fr))}
+.v14-action-dashboard .v16-coverage-kpi{border-color:color-mix(in srgb,var(--impl-partial) 50%,var(--border));background:color-mix(in srgb,var(--impl-partial) 7%,var(--surface));flex-direction:column;gap:5px}
+.v16-coverage-kpi>span>small:last-child{display:block;color:var(--text-secondary);font-size:10px;font-weight:400}
+.v14-action-dashboard .v16-coverage-kpi strong{color:var(--text-primary);white-space:nowrap}
+.v16-corrective-coverage{margin:0!important;min-width:0;padding:19px!important}
+.v16-corrective-coverage .paneltitle{align-items:flex-start;gap:15px;flex-wrap:wrap}
+.v16-corrective-coverage h3{font-size:16px;margin:0;line-height:1.7}
+.v16-corrective-coverage h3 .v8-en{font-size:10px}
+.v16-corrective-coverage .paneltitle p{font-size:12px;color:var(--text-secondary);margin:5px 0 0;line-height:1.9}
+.v16-coverage-rate{font-size:29px;color:var(--text-primary);font-weight:800;text-align:left;line-height:1.2;white-space:nowrap}
+.v16-coverage-rate>small{display:block;font-size:10px;color:var(--text-secondary);font-weight:500;margin-top:7px}
+.v16-coverage-counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:16px 0}
+.v16-coverage-counts>article{border:1px solid var(--border);border-radius:8px;background:var(--surface-alt);padding:11px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
+.v16-coverage-counts>article>span{font-size:11px;line-height:1.8}
+.v16-coverage-counts strong{font-size:23px;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--text-primary)}
+.v16-coverage-counts strong>small{font-size:10px;font-weight:400;margin-inline-start:5px;color:var(--text-secondary)}
+.v16-coverage-track{height:31px;border-radius:6px;display:flex;overflow:hidden;direction:rtl;background:var(--surface-alt)}
+.v16-coverage-track>span[data-v16-coverage-segment]{display:flex;justify-content:center;align-items:center;box-sizing:border-box;flex-shrink:0;color:#fff;font-size:12px;font-weight:800;border-inline-end:1px solid var(--surface)}
+.v16-coverage-track>span[data-v16-coverage-segment=covered],html[data-theme=dark] .v16-coverage-track>span[data-v16-coverage-segment]{color:#0B1220}
+.v16-coverage-track.is-empty{border:1px dashed var(--border);height:auto;min-height:31px;align-items:center;justify-content:center;padding:8px;text-align:center;color:var(--text-secondary);font-size:11px}
+.v16-coverage-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:10px}
+.v16-coverage-legend>span{display:flex;align-items:center;gap:6px;font-size:11px;line-height:1.8}
+.v16-coverage-legend i{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.v16-coverage-legend b{font-size:13px}
+.v16-corrective-coverage>.v12-chart-hint{font-size:11px;line-height:2;margin:12px 0 0}
+.v16-coverage-details{border-top:1px solid var(--border);padding-top:11px;margin-top:12px;font-size:12px}
+.v16-coverage-details>summary{cursor:pointer;font-weight:600;line-height:1.9}
+.v16-coverage-detail-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;padding-top:10px}
+.v16-coverage-detail-grid h4{font-size:12px;margin:2px 0 10px}
+.v16-coverage-detail-grid>section{min-width:0}
+.v16-coverage-detail-grid article{border:1px solid var(--border);background:var(--surface-alt);border-radius:7px;padding:9px;margin-bottom:8px;min-width:0}
+.v16-coverage-project-open{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:right;background:transparent!important;border:0!important;padding:0!important;color:var(--text-primary);font-size:12px}
+.v16-coverage-project-open>span{min-width:0;overflow-wrap:anywhere;line-height:1.9}
+.v16-coverage-project-open small{display:block;font-size:10px;color:var(--text-secondary)}
+.v16-coverage-project-open>b{font-size:12px;white-space:nowrap}
+.v16-coverage-links{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.v16-coverage-links>small{font-size:10px;color:var(--text-secondary);line-height:1.9}
+.v16-coverage-item{display:inline-flex;align-items:center;gap:5px;padding:5px 7px!important;max-width:100%;min-width:0;background:var(--surface)!important;border:1px solid var(--border)!important;color:var(--text-primary);font-size:10px!important;text-align:right;border-radius:5px;line-height:1.7}
+.v16-coverage-links .v16-coverage-item>span{display:none}
+.v16-coverage-item bdi{white-space:nowrap;font-weight:700}
+.v16-coverage-item>span{min-width:0;overflow-wrap:anywhere}
+.v16-coverage-uncovered{display:grid;gap:5px;align-content:start}
+.v16-coverage-project-open:focus-visible,.v16-coverage-item:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+@media(max-width:1200px){.v14-action-dashboard .v13-gap-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.v14-action-dashboard .v16-coverage-kpi{grid-column:span 2;flex-direction:row;align-items:center}}
+@media(max-width:850px){.v14-action-dashboard .v13-gap-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.v16-coverage-counts{gap:6px}.v16-coverage-counts>article{padding:9px;flex-direction:column;align-items:flex-start;gap:4px}.v16-coverage-counts>article>span{font-size:10px}.v16-coverage-counts strong{font-size:21px}}
+@media(max-width:600px){.v16-corrective-coverage{padding:14px!important}.v16-corrective-coverage h3{font-size:14px}.v16-corrective-coverage .paneltitle p{font-size:11px}.v16-coverage-rate{font-size:25px}.v16-coverage-detail-grid{grid-template-columns:1fr;gap:12px}.v16-coverage-legend{gap:12px}.v16-coverage-counts{margin:12px 0}.v16-coverage-counts strong>small{font-size:9px;margin-inline-start:3px}.v14-action-dashboard .v16-coverage-kpi{min-height:80px}}
+@media print{.v14-action-dashboard .v13-gap-kpis{grid-template-columns:repeat(5,minmax(0,1fr))}.v14-action-dashboard .v16-coverage-kpi{grid-column:auto;flex-direction:column;align-items:flex-start}.v16-coverage-track,.v16-coverage-legend i{print-color-adjust:exact;-webkit-print-color-adjust:exact}.v16-corrective-coverage{break-inside:avoid}.v16-coverage-details{display:none}}

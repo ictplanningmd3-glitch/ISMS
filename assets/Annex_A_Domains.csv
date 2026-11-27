@@ -1,0 +1,94 @@
+﻿Item ID,حوزه مفهومی,Domain,Item title
+A.5.1,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Policies for information security
+A.5.2,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Information security roles and responsibilities
+A.5.3,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Segregation of duties
+A.5.4,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Management responsibilities
+A.5.5,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Contact with authorities
+A.5.6,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Contact with special interest groups
+A.5.7,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Threat intelligence
+A.5.8,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Information security in project management
+A.5.31,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,"Legal, statutory, regulatory and contractual requirements"
+A.5.32,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Intellectual property rights
+A.5.33,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Protection of records
+A.5.34,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Privacy and protection of PII
+A.5.35,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Independent review of information security
+A.5.36,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,"Compliance with policies, rules and standards for information security"
+A.5.37,حاکمیت و مدیریت امنیت اطلاعات,Governance & Information Security Management,Documented operating procedures
+A.5.9,مدیریت دارایی‌ها و حفاظت از اطلاعات,Asset & Information Protection,Inventory of information and other associated assets
+A.5.10,مدیریت دارایی‌ها و حفاظت از اطلاعات,Asset & Information Protection,Acceptable use of information and other associated assets
+A.5.11,مدیریت دارایی‌ها و حفاظت از اطلاعات,Asset & Information Protection,Return of assets
+A.5.12,مدیریت دارایی‌ها و حفاظت از اطلاعات,Asset & Information Protection,Classification of information
+A.5.13,مدیریت دارایی‌ها و حفاظت از اطلاعات,Asset & Information Protection,Labelling of information
+A.5.14,مدیریت دارایی‌ها و حفاظت از اطلاعات,Asset & Information Protection,Information transfer
+A.5.15,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Access control
+A.5.16,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Identity management
+A.5.17,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Authentication information
+A.5.18,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Access rights
+A.8.2,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Privileged access rights
+A.8.3,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Information access restriction
+A.8.4,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Access to source code
+A.8.5,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Secure authentication
+A.8.18,هویت، احراز هویت و کنترل دسترسی,Identity & Access Management,Use of privileged utility programs
+A.6.1,امنیت منابع انسانی و آگاهی‌رسانی,Human Resources & Security Awareness,Screening
+A.6.2,امنیت منابع انسانی و آگاهی‌رسانی,Human Resources & Security Awareness,Terms and conditions of employment
+A.6.3,امنیت منابع انسانی و آگاهی‌رسانی,Human Resources & Security Awareness,"Information security awareness, education and training"
+A.6.4,امنیت منابع انسانی و آگاهی‌رسانی,Human Resources & Security Awareness,Disciplinary process
+A.6.5,امنیت منابع انسانی و آگاهی‌رسانی,Human Resources & Security Awareness,Responsibilities after termination or change of employment
+A.6.6,امنیت منابع انسانی و آگاهی‌رسانی,Human Resources & Security Awareness,Confidentiality or non-disclosure agreements
+A.6.7,امنیت منابع انسانی و آگاهی‌رسانی,Human Resources & Security Awareness,Remote working
+A.6.8,امنیت منابع انسانی و آگاهی‌رسانی,Human Resources & Security Awareness,Information security event reporting
+A.7.1,امنیت فیزیکی و محیطی,Physical & Environmental Security,Physical security perimeters
+A.7.2,امنیت فیزیکی و محیطی,Physical & Environmental Security,Physical entry
+A.7.3,امنیت فیزیکی و محیطی,Physical & Environmental Security,"Securing offices, rooms and facilities"
+A.7.4,امنیت فیزیکی و محیطی,Physical & Environmental Security,Physical security monitoring
+A.7.5,امنیت فیزیکی و محیطی,Physical & Environmental Security,Protecting against physical and environmental threats
+A.7.6,امنیت فیزیکی و محیطی,Physical & Environmental Security,Working in secure areas
+A.7.7,امنیت فیزیکی و محیطی,Physical & Environmental Security,Clear desk and clear screen
+A.7.8,امنیت فیزیکی و محیطی,Physical & Environmental Security,Equipment siting and protection
+A.7.9,امنیت فیزیکی و محیطی,Physical & Environmental Security,Security of assets off-premises
+A.7.10,امنیت فیزیکی و محیطی,Physical & Environmental Security,Storage media
+A.7.11,امنیت فیزیکی و محیطی,Physical & Environmental Security,Supporting utilities
+A.7.12,امنیت فیزیکی و محیطی,Physical & Environmental Security,Cabling security
+A.7.13,امنیت فیزیکی و محیطی,Physical & Environmental Security,Equipment maintenance
+A.7.14,امنیت فیزیکی و محیطی,Physical & Environmental Security,Secure disposal or re-use of equipment
+A.8.1,امنیت زیرساخت و شبکه,Infrastructure & Network Security,User endpoint devices
+A.8.20,امنیت زیرساخت و شبکه,Infrastructure & Network Security,Networks security
+A.8.21,امنیت زیرساخت و شبکه,Infrastructure & Network Security,Security of network services
+A.8.22,امنیت زیرساخت و شبکه,Infrastructure & Network Security,Segregation of networks
+A.8.23,امنیت زیرساخت و شبکه,Infrastructure & Network Security,Web filtering
+A.8.6,عملیات، پایش و مدیریت آسیب‌پذیری,Security Operations & Monitoring,Capacity management
+A.8.7,عملیات، پایش و مدیریت آسیب‌پذیری,Security Operations & Monitoring,Protection against malware
+A.8.8,عملیات، پایش و مدیریت آسیب‌پذیری,Security Operations & Monitoring,Management of technical vulnerabilities
+A.8.9,عملیات، پایش و مدیریت آسیب‌پذیری,Security Operations & Monitoring,Configuration management
+A.8.15,عملیات، پایش و مدیریت آسیب‌پذیری,Security Operations & Monitoring,Logging
+A.8.16,عملیات، پایش و مدیریت آسیب‌پذیری,Security Operations & Monitoring,Monitoring activities
+A.8.17,عملیات، پایش و مدیریت آسیب‌پذیری,Security Operations & Monitoring,Clock synchronization
+A.8.19,عملیات، پایش و مدیریت آسیب‌پذیری,Security Operations & Monitoring,Installation of software on operational systems
+A.8.10,حفاظت از داده‌ها و تاب‌آوری اطلاعات,Data Protection & Resilience,Information deletion
+A.8.11,حفاظت از داده‌ها و تاب‌آوری اطلاعات,Data Protection & Resilience,Data masking
+A.8.12,حفاظت از داده‌ها و تاب‌آوری اطلاعات,Data Protection & Resilience,Data leakage prevention
+A.8.13,حفاظت از داده‌ها و تاب‌آوری اطلاعات,Data Protection & Resilience,Information backup
+A.8.14,حفاظت از داده‌ها و تاب‌آوری اطلاعات,Data Protection & Resilience,Redundancy of information processing facilities
+A.8.24,حفاظت از داده‌ها و تاب‌آوری اطلاعات,Data Protection & Resilience,Use of cryptography
+A.8.25,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Secure development life cycle
+A.8.26,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Application security requirements
+A.8.27,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Secure system architecture and engineering principles
+A.8.28,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Secure coding
+A.8.29,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Security testing in development and acceptance
+A.8.30,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Outsourced development
+A.8.31,توسعه امن و مدیریت تغییر,Secure Development & Change Management,"Separation of development, test and production environments"
+A.8.32,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Change management
+A.8.33,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Test information
+A.8.34,توسعه امن و مدیریت تغییر,Secure Development & Change Management,Protection of information systems during audit testing
+A.5.19,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Information security in supplier relationships
+A.5.20,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Addressing information security within supplier agreements
+A.5.21,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Managing information security in the ICT supply chain
+A.5.22,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity","Monitoring, review and change management of supplier services"
+A.5.23,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Information security for use of cloud services
+A.5.24,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Information security incident management planning and preparation
+A.5.25,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Assessment and decision on information security events
+A.5.26,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Response to information security incidents
+A.5.27,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Learning from information security incidents
+A.5.28,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Collection of evidence
+A.5.29,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",Information security during disruption
+A.5.30,طرف‌های ثالث، مدیریت رخداد و تداوم,"Third Party, Incident & Continuity",ICT readiness for business continuity

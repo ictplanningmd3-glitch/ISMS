@@ -1,0 +1,16 @@
+/* Repeatable qualitative indicators in corrective-project forms. */
+.v18-project-head-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px}
+.v12-project-form .v18-project-indicators{margin:14px 0;padding:14px;border:1px solid var(--border);border-radius:10px;background:var(--surface-alt);min-width:0}
+.v18-indicator-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.v12-project-form .v18-indicator-heading h3{margin:0;font-size:13px;color:var(--text-primary)}
+.v18-indicator-heading small{display:block;font-size:10px;color:var(--text-secondary);margin-top:3px}
+.v18-indicator-heading>span{font-size:11px;color:var(--text-secondary);white-space:nowrap}
+.v12-project-form .v18-project-indicators>p{margin:9px 0;color:var(--text-secondary);font-size:11px;line-height:1.9}
+.v18-indicator-rows{display:grid;gap:8px}
+.v12-project-form .v18-indicator-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:end}
+.v12-project-form .v18-indicator-row label{display:grid;gap:4px;min-width:0;font-size:11px;margin:0}
+.v12-project-form .v18-indicator-row input{width:100%;min-width:0;font-size:12px;background:var(--surface)}
+.v12-project-form .v18-indicator-row>button{align-self:end;font-size:11px;padding:9px 12px;min-height:37px}
+.v12-project-form .v18-project-indicators>[data-v18-add-indicator]{margin-top:10px;font-size:11px}
+.v12-project-form .v18-indicators-empty{border:1px dashed var(--border);border-radius:6px;padding:10px;text-align:center}
+@media(max-width:600px){.v18-project-head-actions{width:100%;justify-content:stretch}.v18-project-head-actions>button,.v18-project-head-actions>div{flex:1}.v12-project-form .v18-project-indicators{padding:11px}.v12-project-form .v18-indicator-row>button{padding:9px;font-size:10px}}

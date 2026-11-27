@@ -1,0 +1,219 @@
+{
+  "version": 16,
+  "basis": "Analytical whole-standard radar grouping only; individual authoritative requirements/Annex A mappings remain unchanged.",
+  "groups": [
+    {
+      "id": "standard:governance",
+      "title": "شناخت سازمان، رهبری و حاکمیت",
+      "short": "شناخت و حاکمیت",
+      "english": "Context, Leadership & Governance",
+      "kind": "all",
+      "itemIds": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "5.1",
+        "5.2",
+        "5.3",
+        "A.5.1",
+        "A.5.2",
+        "A.5.3",
+        "A.5.4",
+        "A.5.5",
+        "A.5.6"
+      ]
+    },
+    {
+      "id": "standard:risk-planning",
+      "title": "مدیریت ریسک، اهداف و تغییرات",
+      "short": "ریسک و طرح‌ریزی",
+      "english": "Risk, Objectives & Change Planning",
+      "kind": "all",
+      "itemIds": [
+        "6.1.1",
+        "6.1.2",
+        "6.1.3",
+        "6.2",
+        "6.3",
+        "8.2",
+        "8.3",
+        "A.5.7",
+        "A.5.8",
+        "A.8.32"
+      ]
+    },
+    {
+      "id": "standard:information",
+      "title": "دارایی‌ها، اطلاعات مدون و انطباق قانونی",
+      "short": "دارایی و مستندات",
+      "english": "Assets, Documented Information & Legal Compliance",
+      "kind": "all",
+      "itemIds": [
+        "7.4",
+        "7.5.1",
+        "7.5.2",
+        "7.5.3",
+        "A.5.9",
+        "A.5.10",
+        "A.5.11",
+        "A.5.12",
+        "A.5.13",
+        "A.5.14",
+        "A.5.31",
+        "A.5.32",
+        "A.5.33",
+        "A.5.34",
+        "A.5.36",
+        "A.5.37"
+      ]
+    },
+    {
+      "id": "standard:people",
+      "title": "منابع، شایستگی و امنیت افراد",
+      "short": "منابع و افراد",
+      "english": "Resources, Competence & People Security",
+      "kind": "all",
+      "itemIds": [
+        "7.1",
+        "7.2",
+        "7.3",
+        "A.6.1",
+        "A.6.2",
+        "A.6.3",
+        "A.6.4",
+        "A.6.5",
+        "A.6.6",
+        "A.6.7",
+        "A.6.8"
+      ]
+    },
+    {
+      "id": "standard:physical",
+      "title": "امنیت فیزیکی و محیطی",
+      "short": "فیزیکی و محیطی",
+      "english": "Physical & Environmental Security",
+      "kind": "all",
+      "itemIds": [
+        "A.7.1",
+        "A.7.2",
+        "A.7.3",
+        "A.7.4",
+        "A.7.5",
+        "A.7.6",
+        "A.7.7",
+        "A.7.8",
+        "A.7.9",
+        "A.7.10",
+        "A.7.11",
+        "A.7.12",
+        "A.7.13",
+        "A.7.14"
+      ]
+    },
+    {
+      "id": "standard:identity",
+      "title": "هویت، احراز هویت و کنترل دسترسی",
+      "short": "هویت و دسترسی",
+      "english": "Identity & Access Management",
+      "kind": "all",
+      "itemIds": [
+        "A.5.15",
+        "A.5.16",
+        "A.5.17",
+        "A.5.18",
+        "A.8.2",
+        "A.8.3",
+        "A.8.4",
+        "A.8.5",
+        "A.8.18"
+      ]
+    },
+    {
+      "id": "standard:infrastructure",
+      "title": "کنترل عملیات، زیرساخت و شبکه",
+      "short": "عملیات و شبکه",
+      "english": "Operational Control, Infrastructure & Network Security",
+      "kind": "all",
+      "itemIds": [
+        "8.1",
+        "A.8.1",
+        "A.8.6",
+        "A.8.9",
+        "A.8.19",
+        "A.8.20",
+        "A.8.21",
+        "A.8.22",
+        "A.8.23"
+      ]
+    },
+    {
+      "id": "standard:monitoring",
+      "title": "پایش، مدیریت رخداد و بهبود",
+      "short": "پایش و بهبود",
+      "english": "Monitoring, Incident Management & Improvement",
+      "kind": "all",
+      "itemIds": [
+        "9.1",
+        "9.2.1",
+        "9.2.2",
+        "9.3.1",
+        "9.3.2",
+        "9.3.3",
+        "10.1",
+        "10.2",
+        "A.5.24",
+        "A.5.25",
+        "A.5.26",
+        "A.5.27",
+        "A.5.28",
+        "A.5.35",
+        "A.8.7",
+        "A.8.8",
+        "A.8.15",
+        "A.8.16",
+        "A.8.17"
+      ]
+    },
+    {
+      "id": "standard:resilience",
+      "title": "حفاظت داده، تداوم و طرف‌های ثالث",
+      "short": "داده و تداوم",
+      "english": "Data Protection, Continuity & Third Parties",
+      "kind": "all",
+      "itemIds": [
+        "A.5.19",
+        "A.5.20",
+        "A.5.21",
+        "A.5.22",
+        "A.5.23",
+        "A.5.29",
+        "A.5.30",
+        "A.8.10",
+        "A.8.11",
+        "A.8.12",
+        "A.8.13",
+        "A.8.14",
+        "A.8.24"
+      ]
+    },
+    {
+      "id": "standard:development",
+      "title": "توسعه و مهندسی امن",
+      "short": "توسعه امن",
+      "english": "Secure Development & Engineering",
+      "kind": "all",
+      "itemIds": [
+        "A.8.25",
+        "A.8.26",
+        "A.8.27",
+        "A.8.28",
+        "A.8.29",
+        "A.8.30",
+        "A.8.31",
+        "A.8.33",
+        "A.8.34"
+      ]
+    }
+  ]
+}
